@@ -1,4 +1,6 @@
-## PHP, Coder, Code Sniffer, and Syntastic in OS X
+## PHP, Coder, and Code Sniffer in OS X
+
+### PHP
 
 I originally used the PHP package bundled with OS X. This doesn't seem to be easily maintainable since you would have an outdated PHP version. I've since replaced this with [`homebrew-php`](https://github.com/Homebrew/homebrew-php) specifically the package `php54`.
 
@@ -8,3 +10,15 @@ I originally used the PHP package bundled with OS X. This doesn't seem to be eas
 chmod -R ug+w /usr/local/Cellar/php54/5.4.38/lib/php
 pear config-set php_ini /usr/local/etc/php/5.4/php.ini system
 ```
+
+I had an old installation of `PHP_CodeSniffer` and it got confusing when I tried to use `phpcs` since it was using the old sniffs rather than the ones that I recently updated.
+
+### Code Sniffer
+
+Installation of Code Sniffer is as easy as doing `composer global require "squizlabs/php_codesniffer=*"`.
+
+### Coder
+
+Installation of Coder is pretty much straightforward. Everything needed is [here](https://www.drupal.org/node/1419988). I've installed it using `drush`. You'll then need to register the sniffs by invoking `phpcs --config-set installed_paths $HOME/.drush/coder/coder_sniffer`. Otherwise; you can do `phpcs --standard=path/to/sniffs/Drupal -- /path/to/file` to do the syntax check.
+
+**Note:** PHPCS 1.x works with Coder 7.x-2.x while PHPCS 2.x works with Coder 8.x-2.x ([source](https://www.drupal.org/node/2342611)). I've installed Coder 8.x-2.x which also works with Drupal 7 modules.
