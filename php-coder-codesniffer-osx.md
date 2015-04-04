@@ -15,7 +15,7 @@ I had an old installation of `PHP_CodeSniffer` and it got confusing when I tried
 
 ### Code Sniffer
 
-Installation of Code Sniffer is as easy as doing `composer global require "squizlabs/php_codesniffer=*"`.
+Installation of PHPCS is as easy as doing `composer global require "squizlabs/php_codesniffer=*"`.
 
 ### Coder
 
