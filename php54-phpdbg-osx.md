@@ -6,7 +6,7 @@ Got [PHPDBG](http://phpdbg.com/) enabled in PHP 5.4 although I've never bothered
 
 I use [`homebrew-php`](https://github.com/Homebrew/homebrew-php) to install PHP 5.4. Versions 5.4+ have the flag `--with-phpdbg` if you wish to include PHPDBG during installation therefore installation is simply via invoking `brew install php54 --with-phpdbg`.
 
-The version of PHPDBG that comes with the `php54` package is `v0.3.2`. I gave this a try but didn't much like it as it had a lot of bugs. What worked for me was replacing it with the one with latest changes (specifically c6802cdf). It still had a few bugs in it but it was way better. I had to change the source of `homebrew-php` to make it work. Here's a diff of my changes at `homebrew-php` installation directory:
+The version of PHPDBG that comes with the `php54` package is `v0.3.2`. I gave this a try but didn't much like it as it had a lot of bugs. What worked for me was replacing it with the one with latest changes (specifically krakjoe/phpdbg@c6802cdf). It still had a few bugs in it but it was way better. I had to change the source of `homebrew-php` to make it work. Here's a diff of my changes at `homebrew-php` installation directory:
 
 ```diff
 diff --git a/Abstract/abstract-php-version.rb b/Abstract/abstract-php-version.rb
