@@ -1,12 +1,14 @@
 ## PHP 5.4 and PHPDBG in OS X
 
-Got [PHPDBG](http://phpdbg.com/) enabled in PHP 5.4 although I've never bothered giving it a try. Recently, I decided to play around with it and try to compare it with Xdebug.
+I got [PHPDBG](http://phpdbg.com/) enabled in PHP 5.4 although I've never bothered giving it a try. Recently, I decided to play around with it to try to compare it with Xdebug. I tested it with a minimal Drupal installation.
 
 ### Installation
 
+#### PHP and PHPDBG
+
 I use [`homebrew-php`](https://github.com/Homebrew/homebrew-php) to install PHP 5.4. Versions 5.4+ have the flag `--with-phpdbg` if you wish to include PHPDBG during installation therefore installation is simply via invoking `brew install php54 --with-phpdbg`.
 
-The version of PHPDBG that comes with the `php54` package is `v0.3.2`. I gave this a try but didn't much like it as it had a lot of bugs. What worked for me was replacing it with the one with latest changes (specifically krakjoe/phpdbg@c6802cdf). It still had a few bugs in it but it was way better. I had to change the source of `homebrew-php` to make it work. Here's a diff of my changes at `homebrew-php` installation directory:
+The version of PHPDBG that comes with the `php54` package is `v0.3.2`. I gave this a try but didn't much like it as it had a lot of bugs. What worked for me was replacing it with the one that had the latest changes (specifically [this](https://github.com/krakjoe/phpdbg/commit/c6802cdf5f4f0da213b365510df056b177d5c7e2)). It still had a few bugs in it but it was way better. I had to change the source of `homebrew-php` to make it work. Here's a diff of my changes at `homebrew-php` installation directory:
 
 ```diff
 diff --git a/Abstract/abstract-php-version.rb b/Abstract/abstract-php-version.rb
@@ -28,4 +30,19 @@ index 943b259..9b7dee8 100644
                        }
    end
  
+```
+
+#### Drupal
+
+I had a minimal installation of Drupal. I simply grabbed Drupal 7 and installed it via `drush si --db-url=sqlite://sites/default/files/.ht.sqlite -y`.
+
+### Set Up
+
+The documentation is a bit difficult to understand considering that I am relatively new to debugging. Unlike Xdebug, you'll need to mock a webserver to get PHPDBG to work with web applications like Drupal. An example can be found from both the [repository](https://github.com/krakjoe/phpdbg/blob/master/web-bootstrap.php) and [documentation](http://phpdbg.com/docs/mocking-webserver). I used it like this:
+
+```bash
+$ cd /path/to/drupal
+$ phpdbg
+prompt> exec index.php
+prompt> ev include '/path/to/web-bootstrap.php';
 ```
