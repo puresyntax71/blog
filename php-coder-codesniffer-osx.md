@@ -23,6 +23,6 @@ Installation of Coder is pretty much straightforward. Everything needed is [here
 
 After installating Coder, you'll need to register the sniffs by invoking `phpcs --config-set installed_paths $HOME/.drush/coder/coder_sniffer`. Otherwise; you can do `phpcs --standard=path/to/sniffs/Drupal -- /path/to/file` to do the syntax check.
 
-**Note:** PHPCS 1.x works with Coder 7.x-2.x while PHPCS 2.x works with Coder 8.x-2.x ([source](https://www.drupal.org/node/2342611)). I've installed Coder 8.x-2.x which also works with Drupal 7 modules.
+**Note:** PHPCS 1.x works with Coder 7.x-2.x while PHPCS 2.x works with Coder 8.x-2.x (source [here](https://www.drupal.org/node/2342611) and [here](https://www.drupal.org/node/2387871#comment-9409549)). I've installed Coder 8.x-2.x which also works with Drupal 7 modules.
 
 There's a lot more you can do with PHPCS. One that I find useful is `phpcbf`. More usage examples [here](https://www.drupal.org/node/1587138).
