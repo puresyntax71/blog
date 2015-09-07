@@ -1,6 +1,10 @@
-## PHP, Coder, and Code Sniffer in OS X
-
-### PHP
+title: PHP, Coder, and Code Sniffer in OS X
+date: 2015-04-04
+tags:
+- PHP
+- OSX
+---
+## PHP
 
 I originally used the PHP package bundled with OS X. This doesn't seem to be easily maintainable since you would have an outdated PHP version. I've since replaced this with [`homebrew-php`](https://github.com/Homebrew/homebrew-php) specifically the package `php54`.
 
@@ -13,11 +17,11 @@ pear config-set php_ini /usr/local/etc/php/5.4/php.ini system
 
 I had an old installation of `PHP_CodeSniffer` and it got confusing when I tried to use `phpcs` since it was using the old sniffs rather than the ones that I recently updated.
 
-### Code Sniffer
+## Code Sniffer
 
 Installation of PHPCS is as easy as doing `composer global require "squizlabs/php_codesniffer=*"`.
 
-### Coder
+## Coder
 
 Installation of Coder is pretty much straightforward. Everything needed is [here](https://www.drupal.org/node/1419988). I've installed it using `drush`.
 
