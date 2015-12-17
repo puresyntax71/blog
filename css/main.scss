@@ -51,3 +51,9 @@ $on-laptop:        800px;
         "layout",
         "syntax-highlighting"
 ;
+
+// Customizations...
+.post footer {
+  font-size: 15px;
+  color: $grey-color;
+}
