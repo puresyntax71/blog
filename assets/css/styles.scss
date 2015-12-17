@@ -60,5 +60,58 @@ pre > code {
 // ----------------------------------------------------------------------------
 // Posts
 .post-meta {
-  font-style: italic;
+  .date {
+    font-style: italic;
+    margin-bottom: 0;
+  }
+
+  aside {
+    h3 {
+      width: 30px;
+      display: block;
+      clear: left;
+    }
+
+    h3, ul {
+      display: inline-block;
+      margin: 0;
+      padding: 0;
+    }
+
+    ul {
+      font-size: 16px;
+      line-height: 15px;
+    }
+
+    ul li {
+      display: inline-block;
+    }
+
+    ul a {
+      background-color: #ecf1f1;
+      border-radius: 5px;
+      padding: 3px 8px;
+      color: lighten(#222629, 50%);
+      text-transform: uppercase;
+      font-weight: 400;
+      font-size: 14px;
+
+      &:hover {
+        background-color: darken(#ecf1f1, 50%);
+        color: #fff;
+      }
+    }
+  }
+
+  aside h3 {
+    margin: 0;
+    padding: 0;
+    font-size: 80%;
+    font-weight: bold;
+  }
+
+}
+
+.post-content {
+  clear: both;
 }

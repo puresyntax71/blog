@@ -1,28 +1,34 @@
 ---
 layout: default
 ---
-<article class="two post" itemscope itemtype="http://schema.org/BlogPosting">
+<article class="two post">
   <div class="container">
     <header>
       <h2>{{ page.title }}</h2>
       <div class="post-meta">
-        <p>Posted on <time>{{ page.date | date: "%b %-d, %Y" }}</time></p>
+        <p class="date">Posted on <time>{{ page.date | date: "%b %-d, %Y" }}</time></p>
         <aside>
           {% if page.categories.size > 0 %}
-          <h3>Categories</h3>
-          <ul class="categories">
-            {% for category in page.categories %}
-            <li>{{ category }}</li>
-            {% endfor %}
-          </ul>
+          <div class="categories-list">
+            <h3 class="icon fa-bookmark"></h3>
+            <ul class="categories">
+              {% for category in page.categories %}
+              {% capture url %}/category/{{ category }}{% endcapture %}
+              <li><a href="{{ url | prepend: site.baseurl }}">{{ category }}</a></li>
+              {% endfor %}
+            </ul>
+          </div>
           {% endif %}
           {% if page.tags.size > 0 %}
-          <h3>Tags</h3>
-          <ul class="tags">
-            {% for tag in page.tags %}
-            <li>{{ tag }}</li>
-            {% endfor %}
-          </ul>
+          <div class="tags-list">
+            <h3 class="icon fa-tag"></h3>
+            <ul class="tags">
+              {% for tag in page.tags %}
+              {% capture url %}/tag/{{ tag }}{% endcapture %}
+              <li><a href="{{ url | prepend: site.baseurl }}">{{ tag }}</a></li>
+              {% endfor %}
+            </ul>
+          </div>
           {% endif %}
         </aside>
       </div>
