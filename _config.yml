@@ -1,31 +1,13 @@
-# Site settings.
 title: fr.ench.info
+email: arn.french@gmail.com
 description: >
   Write an awesome description for your new site here. You can edit this
   line in _config.yml. It will appear in your document head meta (for
   Google search results) and in your feed.xml site description.
 baseurl: ""
 url: "http://fr.ench.info"
-
-# Navigation settings. Expects a list with the title as the key and the
-# following properties:
-# - icon: The icon used from font-awesome.
-# - link: External or internal link. Add trailing slash. :D
-menu:
-  Home:
-    icon: home
-    link: /
-  About:
-    icon: user
-    link: /about/
-  Contact:
-    icon: envelope
-    link: mailto:arn.french@gmail.com
-
-social:
-  twitter: breadpan
-  github: dsdeiz
-  drupal: dsdeiz
+twitter_username: breadpan
+github_username:  dsdeiz
 
 markdown: kramdown
 
@@ -42,6 +24,5 @@ jekyll-archives:
     tag: /tag/:name/
     category: /category/:name/
 
-# Plugins
 gems:
   - jekyll-archives

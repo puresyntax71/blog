@@ -1,41 +1,15 @@
 ---
 layout: default
 ---
-<article class="two post">
-  <div class="container">
-    <header>
-      <h2>{{ page.title }}</h2>
-      <div class="post-meta">
-        <p class="date">Posted on <time>{{ page.date | date: "%b %-d, %Y" }}</time></p>
-        <aside>
-          {% if page.categories.size > 0 %}
-          <div class="categories-list">
-            <h3 class="icon fa-bookmark"></h3>
-            <ul class="categories">
-              {% for category in page.categories %}
-              {% capture url %}/category/{{ category }}{% endcapture %}
-              <li><a href="{{ url | prepend: site.baseurl }}">{{ category }}</a></li>
-              {% endfor %}
-            </ul>
-          </div>
-          {% endif %}
-          {% if page.tags.size > 0 %}
-          <div class="tags-list">
-            <h3 class="icon fa-tag"></h3>
-            <ul class="tags">
-              {% for tag in page.tags %}
-              {% capture url %}/tag/{{ tag }}{% endcapture %}
-              <li><a href="{{ url | prepend: site.baseurl }}">{{ tag }}</a></li>
-              {% endfor %}
-            </ul>
-          </div>
-          {% endif %}
-        </aside>
-      </div>
-    </header>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
-    <div class="post-content">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">{{ page.title }}</h1>
+    <p class="post-meta"><time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>{% if page.author %} • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>{% endif %}</p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
     {{ content }}
-    </div>
   </div>
+
 </article>

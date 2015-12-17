@@ -2,41 +2,22 @@
 layout: default
 ---
 
-<!-- Intro -->
-<section class="one dark cover">
-  <div class="container">
-    <header>
-      <h2 class="alt">Hi! I'm <strong>Prologue</strong>, a <a href="http://html5up.net/license">free</a> responsive<br />
-      site template designed by <a href="http://html5up.net">HTML5 UP</a>.</h2>
-      <p>Ligula scelerisque justo sem accumsan diam quis<br />
-      vitae natoque dictum sollicitudin elementum.</p>
-    </header>
+<div class="home">
 
-    <footer>
-      <a href="#portfolio" class="button scrolly">Magna Aliquam</a>
-    </footer>
-  </div>
-</section>
+  <h1 class="page-heading">Posts</h1>
 
-<section id="article-list" class="two">
-  <div class="container">
-    <header>
-      <h2>Posts</h2>
-    </header>
+  <ul class="post-list">
+    {% for post in site.posts %}
+      <li>
+        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
 
-    <div class="articles">
-      {% for post in site.posts %}
-      <article>
-        <header>
-          <h3><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3>
-          <p class="post-meta">Posted on <time>{{ post.date | date: "%b %-d, %Y" }}</time></p>
-        </header>
-
-        <div class="post-content">
-        {{ post.excerpt }}
-        </div>
-      </article>
+        <h2>
+          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+        </h2>
+      </li>
     {% endfor %}
-    </div>
-  </div>
-</section>
+  </ul>
+
+  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+
+</div>
