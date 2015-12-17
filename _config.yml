@@ -15,7 +15,7 @@ permalink: /:year/:month/:day/:title/
 
 exclude:
   - vendor
-  - script
+  - bin
 
 jekyll-archives:
   enabled: [categories, tags]
