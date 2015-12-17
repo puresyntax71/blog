@@ -13,13 +13,16 @@ markdown: kramdown
 
 permalink: /:year/:month/:day/:title/
 
-exclude:
-  - vendor
-  - bin
-
 jekyll-archives:
   enabled: [categories, tags]
   layout: archive
   permalinks:
     tag: /tag/:name/
     category: /category/:name/
+
+exclude:
+  - vendor
+  - bin
+  - Gemfile
+  - Gemfile.lock
+  - README.md
