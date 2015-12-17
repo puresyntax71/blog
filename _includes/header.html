@@ -5,7 +5,7 @@
 
     <!-- Logo -->
       <div id="logo">
-        <span class="image avatar48"><img src="images/avatar.jpg" alt="" /></span>
+        <span class="image avatar48"><img src="/images/avatar.png" alt="" /></span>
         <h1 id="title">Jane Doe</h1>
         <p>Hyperspace Engineer</p>
       </div>
@@ -26,10 +26,9 @@
 
         -->
         <ul>
-          <li><a href="#top" id="top-link" class="skel-layers-ignoreHref"><span class="icon fa-home">Intro</span></a></li>
-          <li><a href="#portfolio" id="portfolio-link" class="skel-layers-ignoreHref"><span class="icon fa-th">Portfolio</span></a></li>
-          <li><a href="#about" id="about-link" class="skel-layers-ignoreHref"><span class="icon fa-user">About Me</span></a></li>
-          <li><a href="#contact" id="contact-link" class="skel-layers-ignoreHref"><span class="icon fa-envelope">Contact</span></a></li>
+          {% for item in site.menu %}
+          <li><a href="{{ item[1].link }}" class="skel-layers-ignoreHref {% if page.url == item[1].link %}active{% endif %}"><span class="icon fa-{{ item[1].icon }}">{{ item[0] }}</span></a></li>
+          {% endfor %}
         </ul>
       </nav>
 
@@ -39,11 +38,15 @@
 
     <!-- Social Icons -->
       <ul class="icons">
-        <li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-        <li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-        <li><a href="#" class="icon fa-github"><span class="label">Github</span></a></li>
-        <li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li>
-        <li><a href="#" class="icon fa-envelope"><span class="label">Email</span></a></li>
+        {% if site.social.twitter %}
+        <li><a href="https://twitter.com/{{ site.social.twitter }}" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+        {% endif %}
+        {% if site.social.github %}
+        <li><a href="https://github.com/{{ site.social.github }}" class="icon fa-github"><span class="label">Github</span></a></li>
+        {% endif %}
+        {% if site.social.drupal %}
+        <li><a href="https://drupal.org/u/{{ site.social.drupal }}" class="icon fa-drupal"><span class="label">Drupal</span></a></li>
+        {% endif %}
       </ul>
 
   </div>

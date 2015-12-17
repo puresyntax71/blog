@@ -1,4 +1,5 @@
 ---
+# Main scss file from Prologue.
 ---
 
 @import 'vars';
@@ -25,7 +26,7 @@
   ));
 
   @include skel-layout((
-    reset: 'full',
+    reset: 'normalize',
     boxModel: 'border',
     grid: ( gutters: (40px, 40px) ),
     conditionals: true,

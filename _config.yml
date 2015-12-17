@@ -1,23 +1,45 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely need to edit after that.
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'jekyll serve'. If you change this file, please restart the server process.
-
-# Site settings
-title: Your awesome title
-email: your-email@domain.com
-description: > # this means to ignore newlines until "baseurl:"
+# Site settings.
+title: fr.ench.info
+description: >
   Write an awesome description for your new site here. You can edit this
   line in _config.yml. It will appear in your document head meta (for
   Google search results) and in your feed.xml site description.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://yourdomain.com" # the base hostname & protocol for your site
-twitter_username: jekyllrb
-github_username:  jekyll
+baseurl: ""
+url: "http://fr.ench.info"
 
-# Build settings
+# Navigation settings. Expects a list with the title as the key and the
+# following properties:
+# - icon: The icon used from font-awesome.
+# - link: External or internal link. Add trailing slash. :D
+menu:
+  Home:
+    icon: home
+    link: /
+  About:
+    icon: user
+    link: /about/
+  Contact:
+    icon: envelope
+    link: mailto:arn.french@gmail.com
+
+social:
+  twitter: breadpan
+  github: dsdeiz
+  drupal: dsdeiz
+
 markdown: kramdown
 
-exclude: [vendor]
+exclude:
+  - vendor
+  - script
+
+jekyll-archives:
+  enabled: [categories, tags]
+  layout: archive
+  permalinks:
+    tag: /tag/:name/
+    category: /category/:name/
+
+# Plugins
+gems:
+  - jekyll-archives
