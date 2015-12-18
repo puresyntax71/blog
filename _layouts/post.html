@@ -25,7 +25,7 @@ layout: default
       {% endif %}
       {% if page.tags.size > 0 %}
       <div class="tags">
-        <span>Tagged in:</span>
+        <span>Tagged with:</span>
         {% for tag in page.tags %}
         {% capture url %}/tag/{{ tag }}/{% endcapture %}
         <a href="{{ url | prepend: site.baseurl }}">{{ tag }}</a>{% if forloop.last == false %}, {% endif %}

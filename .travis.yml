@@ -3,7 +3,7 @@ rvm:
 - 2.2
 script:
 - bundle exec jekyll build
-- bundle exec htmlproof ./_site --disable-external --href-ignore "#"
+- bundle exec htmlproof ./_site --disable-external --allow-hash-href
 after_success:
 - test $TRAVIS_PULL_REQUEST == "false" && test $TRAVIS_BRANCH == "master" && "./bin/automated"
 env:
