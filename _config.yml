@@ -8,6 +8,7 @@ baseurl: ""
 url: "http://fr.ench.info"
 twitter_username: breadpan
 github_username:  dsdeiz
+drupal_username:  dsdeiz
 
 markdown: kramdown
 
