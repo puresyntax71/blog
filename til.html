@@ -5,7 +5,7 @@ permalink: /til/
 
 <div class="til">
 
-  <h1 class="page-heading">TIL</h1>
+  <h1 class="page-heading">TIL (Today I Learned)</h1>
 
   <dl>
     {% for post in site.data.til %}
@@ -13,4 +13,5 @@ permalink: /til/
       <dd>{{ post[1] | markdownify }}</dd>
     {% endfor %}
   </dl>
+
 </div>
