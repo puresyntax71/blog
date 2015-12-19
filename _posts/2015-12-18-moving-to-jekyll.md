@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Moving to Jekyll
-categories: Jekyll
+categories: jekyll
 ---
 Finally moved back to jekyll. Nothing fancy here though. This is hosted again in Github Pages.
 

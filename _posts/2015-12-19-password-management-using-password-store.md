@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Password Management using Password Store
-categories: Tools
+categories: tools
 tags: tools osx commandline
 ---
 
