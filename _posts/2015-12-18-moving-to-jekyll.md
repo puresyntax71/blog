@@ -1,9 +1,9 @@
 ---
 layout: post
 title: Moving to Jekyll
-categories: jekyll
+categories: Jekyll
 ---
-Finally moved back to jekyll. Nothing fancy here though. This is hosted again with Github Pages.
+Finally moved back to jekyll. Nothing fancy here though. This is hosted again in Github Pages.
 
 I've made some small modifications on the default template and added the [`jekyll-archives`](https://github.com/jekyll/jekyll-archives) plugin. I might add some additional plugins and/or modifications (disqus comments). Everything is based on [jekyll's documentation][1]. Here are a few things that might be worth noting though:
 
