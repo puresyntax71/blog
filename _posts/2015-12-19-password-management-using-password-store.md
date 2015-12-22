@@ -104,7 +104,7 @@ To display your password, invoke this command:
 $ pass foo/bar
 {% endhighlight %}
 
-To copy your password in the clipboard, just add the `-c` flag. `pass` removes it from the clipboard after 45 seconds:
+To copy your password in the clipboard, just add the `-c` flag. `pass` removes it from the clipboard after 45 seconds.
 
 ## Storage
 
