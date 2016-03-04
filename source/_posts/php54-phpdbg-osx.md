@@ -1,5 +1,5 @@
 title: PHP 5.4 and PHPDBG in OS X
-date: 2016/04/06
+date: 2015/04/06
 ---
 I got [PHPDBG](http://phpdbg.com/) enabled in PHP 5.4 although I've never bothered giving it a try. Recently, I decided to play around with it to try to compare it with Xdebug. I tested it with a minimal Drupal installation.
 
@@ -13,7 +13,7 @@ I use [`homebrew-php`](https://github.com/Homebrew/homebrew-php) to install PHP 
 
 The version of PHPDBG that comes with the `php54` package is `v0.3.2`. I gave this a try but didn't much like it as it had a lot of bugs. What worked for me was replacing it with the one that had the latest changes (specifically [this](https://github.com/krakjoe/phpdbg/commit/c6802cdf5f4f0da213b365510df056b177d5c7e2)). It still had a few bugs in it but it was way better. I had to change the source of `homebrew-php` to make it work. Here's a diff of my changes at `homebrew-php` installation directory:
 
-```diff
+``` diff
 diff --git a/Abstract/abstract-php-version.rb b/Abstract/abstract-php-version.rb
 index 943b259..9b7dee8 100644
 --- a/Abstract/abstract-php-version.rb
@@ -43,7 +43,7 @@ I had a minimal installation of Drupal. I simply grabbed Drupal 7 and installed 
 
 The documentation is a bit difficult to understand considering that I am relatively new to debugging. Unlike Xdebug, you'll need to mock a webserver to get PHPDBG to work with web applications like Drupal. An example can be found from both the [repository](https://github.com/krakjoe/phpdbg/blob/master/web-bootstrap.php) and [documentation](http://phpdbg.com/docs/mocking-webserver). I used it like this:
 
-```bash
+``` bash
 $ cd /path/to/drupal
 $ phpdbg
 prompt> exec index.php
@@ -52,7 +52,7 @@ prompt> ev include '/path/to/web-bootstrap.php';
 
 The file needs to be modified for it to work with Drupal. I made the following changes to it:
 
-```diff
+``` diff
 diff --git a/web-bootstrap-1.php b/web-bootstrap.php
 index 7b8c5d3..da9333b 100644
 --- a/web-bootstrap-1.php
@@ -91,7 +91,7 @@ Set a breakpoint by invoking `break func_name` and finally invoking `run` to sta
 
 I did it like this:
 
-```bash
+``` bash
 prompt> exec index.php
 [Execution context not changed]
 prompt> ev include '/private/tmp/web-bootstrap.php';
