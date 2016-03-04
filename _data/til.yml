@@ -1,6 +1,0 @@
-Access Man Page: |
-  Press <kbd>ALT</kbd> + <kbd>h</kbd> in the command line for `emacs` mode when cursor is in a command.
-Operations for File/Directory to Previous Path: |
-  To move/copy a file or directory to the previous path, you can do `mv /path/to/file ~-`.
-Git Request Pull: |
-  Not really sure what this does but [this](https://git-scm.com/docs/git-request-pull) exists.
