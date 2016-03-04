@@ -69,7 +69,9 @@ theme: apollo
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type:
+  type: git
+  repo: https://github.com/dsdeiz/fr.ench.info
+  branch: gh-pages
 
 # Plugins
 archive_generator:
