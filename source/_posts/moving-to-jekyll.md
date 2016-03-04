@@ -1,5 +1,5 @@
----
 title: Moving to Jekyll
+date: 2015/12/18
 ---
 Finally moved back to jekyll. Nothing fancy here though. This is hosted again in Github Pages.
 

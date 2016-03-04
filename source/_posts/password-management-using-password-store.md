@@ -1,8 +1,11 @@
 ---
 title: Password Management using Password Store
+date: 2015/12/19
 ---
 
 [Password Store][1] is a command line utility for managing your passwords. The passwords are stored in an encrypted file which makes use of `gpg`. It also allows you to use `git` to track password changes.
+
+<!-- more -->
 
 `pass` isn't as feature-rich compared to [Last Pass](https://lastpass.com/) or [1Password](https://agilebits.com/onepassword) though.
 
