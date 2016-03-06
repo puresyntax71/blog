@@ -1,0 +1,38 @@
+---
+layout: default
+---
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">{{ page.title }}</h1>
+    <p class="post-meta"><time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>{% if page.author %} • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>{% endif %}</p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    {{ content }}
+  </div>
+
+  <footer class="post-footer">
+    <aside>
+      {% if page.categories.size > 0 %}
+      <div class="categories">
+        <span>Filed under:</span>
+        {% for category in page.categories %}
+        {% capture url %}/category/{{ category }}/{% endcapture %}
+        <a href="{{ url | prepend: site.baseurl }}">{{ category }}</a>{% if forloop.last == false %}, {% endif %}
+        {% endfor %}
+      </div>
+      {% endif %}
+      {% if page.tags.size > 0 %}
+      <div class="tags">
+        <span>Tagged with:</span>
+        {% for tag in page.tags %}
+        {% capture url %}/tag/{{ tag }}/{% endcapture %}
+        <a href="{{ url | prepend: site.baseurl }}">{{ tag }}</a>{% if forloop.last == false %}, {% endif %}
+        {% endfor %}
+      </div>
+      {% endif %}
+    </aside>
+  </footer>
+
+</article>
