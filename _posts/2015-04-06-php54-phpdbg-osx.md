@@ -13,7 +13,7 @@ I use [`homebrew-php`](https://github.com/Homebrew/homebrew-php) to install PHP 
 
 The version of PHPDBG that comes with the `php54` package is `v0.3.2`. I gave this a try but didn't much like it as it had a lot of bugs. What worked for me was replacing it with the one that had the latest changes (specifically [this](https://github.com/krakjoe/phpdbg/commit/c6802cdf5f4f0da213b365510df056b177d5c7e2)). It still had a few bugs in it but it was way better. I had to change the source of `homebrew-php` to make it work. Here's a diff of my changes at `homebrew-php` installation directory:
 
-```diff
+{% highlight shell %}
 diff --git a/Abstract/abstract-php-version.rb b/Abstract/abstract-php-version.rb
 index 943b259..9b7dee8 100644
 --- a/Abstract/abstract-php-version.rb
@@ -33,7 +33,7 @@ index 943b259..9b7dee8 100644
                        }
    end
  
-```
+{% endhighlight %}
 
 #### Drupal
 
@@ -43,16 +43,16 @@ I had a minimal installation of Drupal. I simply grabbed Drupal 7 and installed 
 
 The documentation is a bit difficult to understand considering that I am relatively new to debugging. Unlike Xdebug, you'll need to mock a webserver to get PHPDBG to work with web applications like Drupal. An example can be found from both the [repository](https://github.com/krakjoe/phpdbg/blob/master/web-bootstrap.php) and [documentation](http://phpdbg.com/docs/mocking-webserver). I used it like this:
 
-```bash
+{% highlight shell %}
 $ cd /path/to/drupal
 $ phpdbg
 prompt> exec index.php
 prompt> ev include '/path/to/web-bootstrap.php';
-```
+{% endhighlight %}
 
 The file needs to be modified for it to work with Drupal. I made the following changes to it:
 
-```diff
+{% highlight shell %}
 diff --git a/web-bootstrap-1.php b/web-bootstrap.php
 index 7b8c5d3..da9333b 100644
 --- a/web-bootstrap-1.php
@@ -83,7 +83,7 @@ index 7b8c5d3..da9333b 100644
  $_REQUEST = array();
  $_POST = array();
  $_COOKIE = array();
-```
+{% endhighlight %}
 
 ### Basic Usages
 
@@ -91,7 +91,7 @@ Set a breakpoint by invoking `break func_name` and finally invoking `run` to sta
 
 I did it like this:
 
-```bash
+{% highlight shell %}
 prompt> exec index.php
 [Execution context not changed]
 prompt> ev include '/private/tmp/web-bootstrap.php';
@@ -123,7 +123,7 @@ Array
 )
 
 prompt>
-```
+{% endhighlight %}
 
 I haven't figured out some of the other basic usages such as stepping over a line rather than stepping through it.
 
