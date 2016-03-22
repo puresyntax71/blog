@@ -8,6 +8,7 @@ paginate: 5
 name: "dsdeiz"
 bio: "Yet another web developer."
 author_image: "/assets/images/author.jpg"
+logo: "/assets/images/logo.jpg"
 twitter_username: breadpan
 github_username:  dsdeiz
 drupal_username:  dsdeiz
