@@ -1,9 +1,15 @@
 language: ruby
 rvm:
 - 2.2
+env:
+- TRAVIS_NODE_VERSION="4.2.1"
+install:
+- nvm install "$TRAVIS_NODE_VERSION"
+- npm install --global amp-validator
 script:
 - bundle exec jekyll build
-- bundle exec htmlproof ./_site --disable-external --allow-hash-href --check-html
+- bundle exec htmlproofer ./_site --disable-external --allow-hash-href
+- find _site -type f -name '*.html' | xargs -n 1 amp-validator
 after_success:
 - test $TRAVIS_PULL_REQUEST == "false" && test $TRAVIS_BRANCH == "master" && "./bin/automated"
 env:
