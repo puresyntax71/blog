@@ -5,7 +5,9 @@ env:
 - TRAVIS_NODE_VERSION="4.2.1"
 install:
 - nvm install "$TRAVIS_NODE_VERSION"
+- nvm use "$TRAVIS_NODE_VERSION"
 - npm install --global amp-validator
+- bundle install
 script:
 - bundle exec jekyll build
 - bundle exec htmlproofer ./_site --disable-external --allow-hash-href
