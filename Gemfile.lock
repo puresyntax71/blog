@@ -35,6 +35,7 @@ GEM
     jekyll-archives (2.1.0)
       jekyll (>= 2.4)
     jekyll-compose (0.3.0)
+    jekyll-paginate (1.1.0)
     jekyll-sass-converter (1.3.0)
       sass (~> 3.2)
     jekyll-watch (1.3.0)
@@ -72,6 +73,7 @@ DEPENDENCIES
   jekyll
   jekyll-archives
   jekyll-compose
+  jekyll-paginate
 
 BUNDLED WITH
-   1.10.6
+   1.11.2
