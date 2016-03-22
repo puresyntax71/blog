@@ -3,7 +3,6 @@ rvm:
 - 2.2
 install:
 - nvm install "$TRAVIS_NODE_VERSION"
-- nvm use "$TRAVIS_NODE_VERSION"
 - npm install --global amp-validator
 - bundle install
 script:
