@@ -2,13 +2,13 @@ language: ruby
 rvm:
 - 2.2
 install:
-- nvm install "$TRAVIS_NODE_VERSION"
-- npm install --global amp-validator
+- nvm use
+- npm install --global amp-validator resume-cli
 - bundle install
+- make
 script:
-- bundle exec jekyll build
 - bundle exec htmlproofer ./_site --disable-external --allow-hash-href
-- find _site -type f -name '*.html' | xargs -n 1 amp-validator
+- find _site -type f -name '*.html' -not -name 'resume.html' | xargs -n 1 amphtml-validator
 after_success:
 - test $TRAVIS_PULL_REQUEST == "false" && test $TRAVIS_BRANCH == "master" && "./bin/automated"
 env:
