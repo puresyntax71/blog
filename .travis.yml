@@ -2,7 +2,7 @@ language: ruby
 rvm:
 - 2.2
 install:
-- nvm use
+- nvm install
 - npm install --global amp-validator resume-cli
 - bundle install
 - make
