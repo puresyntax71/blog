@@ -1,10 +1,10 @@
 {
   "basics": {
     "name": "Arnold French",
-    "label": "Programmer",
+    "label": "Web Developer",
     "picture": "",
     "email": "arn.french@gmail.com",
-    "phone": "639399124230",
+    "phone": "+639399124230",
     "website": "http://fr.ench.info",
     "summary": "",
     "location": {
@@ -29,102 +29,176 @@
   },
   "work": [
     {
-      "company": "Pied Piper",
-      "position": "CEO/President",
-      "website": "http://piedpiper.com",
-      "startDate": "2013-12-01",
-      "endDate": "2014-12-01",
-      "summary": "Pied Piper is a multi-platform technology based on a proprietary universal compression algorithm that has consistently fielded high Weisman Scores™ that are not merely competitive, but approach the theoretical limit of lossless compression.",
-      "highlights": [
-        "Build an algorithm for artist to detect if their music was violating copy right infringement laws",
-        "Successfully won Techcrunch Disrupt",
-        "Optimized an algorithm that holds the current world record for Weisman Scores"
-      ]
-    }
-  ],
-  "volunteer": [
-    {
-      "organization": "CoderDojo",
-      "position": "Teacher",
-      "website": "http://coderdojo.com/",
+      "company": "Promet Source",
+      "position": "Drupal Developer",
+      "website": "http://prometsource.com",
       "startDate": "2012-01-01",
-      "endDate": "2013-01-01",
-      "summary": "Global movement of free coding clubs for young people.",
+      "endDate": "",
+      "summary": "",
       "highlights": [
-        "Awarded 'Teacher of the Month'"
+        "Used tools such as Vagrant with chef, ansible, and/or a customized, pre-packaged box on our local setup.",
+        "Used Git to version control our projects.",
+        "Wrote tests and utilized BDD using Behat.",
+        "Used Jenkins and/or Travis for deployment and automated testing.",
+        "Developed with a composer-based and/or shell scripts based build system for our Drupal-based websites.",
+        "Developed custom modules for Drupal-based websites which mostly includes eCommerce and API integration.",
+        "Did site building and configuration, and minor theming.",
+        "Worked as a front-end developer on a project which uses AngularJS and Gulp, connects to a Silex application, and was able to use Express for quick mocking of our external service."
+      ]
+    },
+    {
+      "company": "Promet Source",
+      "position": "Drupal Developer/Themer",
+      "website": "http://prometsource.com",
+      "startDate": "2011-01-01",
+      "endDate": "2012-01-01",
+      "summary": "",
+      "highlights": [
+        "Used LAMP for local environment.",
+        "Created subthemes based on designs using popular base themes such as Zen.",
+        "Developed both Drupal 6 and 7 websites.",
+        "Developed small, custom modules to further customize websites."
+      ]
+    },
+    {
+      "company": "Taniwha Solutions",
+      "position": "Drupal Developer",
+      "website": "",
+      "startDate": "2010-05-01",
+      "endDate": "2010-12-01",
+      "summary": "",
+      "highlights": [
+        "Developed custom modules for Drupal websites.",
+        "Involved in the configuration and theme customization of Drupal websites."
+      ]
+    },
+    {
+      "company": "Eversun",
+      "position": "PHP Programming Support",
+      "website": "",
+      "startDate": "2008-07-01",
+      "endDate": "2009-09-01",
+      "summary": "",
+      "highlights": [
+        "Assisted in website development for Wordpress and Drupal websites."
       ]
     }
   ],
+  "volunteer": [],
   "education": [
     {
-      "institution": "University of Oklahoma",
+      "institution": "West Visayas State University",
       "area": "Information Technology",
       "studyType": "Bachelor",
-      "startDate": "2011-06-01",
-      "endDate": "2014-01-01",
-      "gpa": "4.0",
+      "startDate": "2004-06-01",
+      "endDate": "2008-03-01",
+      "gpa": "",
+      "courses": []
+    },
+    {
+      "institution": "TESDA",
+      "area": "Competency Based Training in Computer",
+      "studyType": "",
+      "startDate": "2007-04-01",
+      "endDate": "2007-05-01",
+      "gpa": "",
       "courses": [
-        "DB1101 - Basic SQL",
-        "CS2011 - Java Introduction"
+        "Maintenance and Servicing, Microcomputer Unit  Assembling, and Microcomputer Unit Maintenance"
       ]
-    }
-  ],
-  "awards": [
+    },
     {
-      "title": "Digital Compression Pioneer Award",
-      "date": "2014-11-01",
-      "awarder": "Techcrunch",
-      "summary": "There is no spoon."
+      "institution": "University of the Philippines High School in Iloilo",
+      "area": "",
+      "studyType": "",
+      "startDate": "2000-06-01",
+      "endDate": "2004-03-01",
+      "gpa": "",
+      "courses": []
     }
   ],
-  "publications": [
-    {
-      "name": "Video compression for 3d media",
-      "publisher": "Hooli",
-      "releaseDate": "2014-10-01",
-      "website": "http://en.wikipedia.org/wiki/Silicon_Valley_(TV_series)",
-      "summary": "Innovative middle-out compression algorithm that changes the way we store data."
-    }
-  ],
+  "awards": [],
+  "publications": [ ],
   "skills": [
     {
-      "name": "Web Development",
-      "level": "Master",
+      "name": "Continuous Integration Tools",
+      "level": "",
       "keywords": [
-        "HTML",
-        "CSS",
+        "Travis CI",
+        "Jenkins"
+      ]
+    },
+    {
+      "name": "Databases",
+      "level": "",
+      "keywords": [
+        "MySQL",
+        "SQLite"
+      ]
+    },
+    {
+      "name": "Frameworks and Other Technologies",
+      "level": "",
+      "keywords": [
+        "Drupal",
+        "AngularJS",
+        "Wordpress",
+        "jQuery",
+        "Express",
+        "SASS",
+        "Stylus",
+        "Bootstrap",
+        "NPM",
+        "Bower",
+        "Composer"
+      ]
+    },
+    {
+      "name": "Operating Systems",
+      "level": "",
+      "keywords": [
+        "Windows",
+        "OS X",
+        "Linux"
+      ]
+    },
+    {
+      "name": "Scripting Languages",
+      "level": "",
+      "keywords": [
+        "PHP",
+        "Ruby",
+        "BASH",
         "Javascript"
       ]
     },
     {
-      "name": "Compression",
-      "level": "Master",
+      "name": "Testing Tools",
+      "level": "",
       "keywords": [
-        "Mpeg",
-        "MP4",
-        "GIF"
+        "Behat",
+        "Simpletest",
+        "Protractor",
+        "Jasmine"
+      ]
+    },
+    {
+      "name": "Web Servers",
+      "level": "",
+      "keywords": [
+        "Nginx",
+        "Apache"
+      ]
+    },
+    {
+      "name": "Other Tools",
+      "level": "",
+      "keywords": [
+        "Vagrant",
+        "Docker"
       ]
     }
   ],
-  "languages": [
-    {
-      "language": "English",
-      "fluency": "Native speaker"
-    }
-  ],
-  "interests": [
-    {
-      "name": "Wildlife",
-      "keywords": [
-        "Ferrets",
-        "Unicorns"
-      ]
-    }
-  ],
-  "references": [
-    {
-      "name": "Erlich Bachman",
-      "reference": "It is my pleasure to recommend Richard, his performance working as a consultant for Main St. Company proved that he will be a valuable addition to any company."
-    }
-  ]
+  "languages": [],
+  "interests": [],
+  "references": []
 }
