@@ -7,7 +7,7 @@ install:
 - bundle install
 - make
 script:
-- bundle exec htmlproofer ./_site --disable-external --allow-hash-href
+- bundle exec htmlproofer ./_site --disable-external --allow-hash-href --file-ignore /resume.html/
 - find _site -type f -name '*.html' -not -name 'resume.html' | xargs -n 1 amphtml-validator
 after_success:
 - test $TRAVIS_PULL_REQUEST == "false" && test $TRAVIS_BRANCH == "master" && "./bin/automated"
