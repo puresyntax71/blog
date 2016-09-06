@@ -3,7 +3,7 @@ rvm:
 - 2.2
 install:
 - nvm install
-- npm install --global amp-validator resume-cli
+- npm install --global amphtml-validator resume-cli
 - bundle install
 - make
 script:
