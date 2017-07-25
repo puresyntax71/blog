@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="fr-FR">
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    
+    
+        <meta name="twitter:card" content="summary"/>
+    
+
+
+
+<meta name="twitter:title" content="PHP, Coder, and Code Sniffer in OS X"/>
+<meta name="twitter:description" content=""/>
+<meta name="twitter:site" content="@vjeantet"/>
+
+
+
+  	<meta property="og:title" content="PHP, Coder, and Code Sniffer in OS X &middot; Valère JEANTET" />
+  	<meta property="og:site_name" content="Valère JEANTET" />
+  	<meta property="og:url" content="http://localhost:1313/2015/04/07/php-coder-codesniffer-osx/" />
+
+    
+        
+            <meta property="og:image" content="/images/cover_polenord.jpg"/>
+        
+    
+
+    
+    <meta property="og:description" content="" />
+  	<meta property="og:type" content="article" />
+    <meta property="article:published_time" content="2015-04-07T00:00:00Z" />
+
+    
+    
+
+    <title>PHP, Coder, and Code Sniffer in OS X &middot; Valère JEANTET</title>
+
+    
+    <meta name="description" content="PHP I originally used the PHP package bundled with OS X. This doesn&amp;rsquo;t seem to be easily maintainable since you would have an outdated PHP version. I&amp;rsquo" />
+    
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="/images/favicon.ico">
+	  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png" />
+
+    <link rel="stylesheet" type="text/css" href="/css/screen.css" />
+    <link rel="stylesheet" type="text/css" href="/css/nav.css" />
+
+    
+
+    
+
+    
+      
+          <link href="/index.xml" rel="alternate" type="application/rss+xml" title="Valère JEANTET" />
+      
+      
+    
+    <meta name="generator" content="Hugo 0.25.1" />
+
+    <link rel="canonical" href="http://localhost:1313/2015/04/07/php-coder-codesniffer-osx/" />
+
+    
+      
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": ,
+        "logo": http://localhost:1313/images/logo.png
+    },
+    "author": {
+        "@type": "Person",
+        "name": ,
+        
+        "image": {
+            "@type": "ImageObject",
+            "url": http://localhost:1313/images/logo.png,
+            "width": 250,
+            "height": 250
+        }, 
+        
+        "url": http://vjeantet.fr,
+        "sameAs": [
+            
+            
+             
+             
+             
+             
+             
+            
+        ],
+        "description": IT software and Security Engineer, Open source enthusiast.
+        
+    },
+    "headline": PHP, Coder, and Code Sniffer in OS X,
+    "name": PHP, Coder, and Code Sniffer in OS X,
+    "wordCount": 249,
+    "timeRequired": "PT2M",
+    "inLanguage": {
+      "@type": "Language",
+      "alternateName": en
+    },
+    "url": http://localhost:1313/2015/04/07/php-coder-codesniffer-osx/,
+    "datePublished": 2015-04-07T00:00Z,
+    "dateModified": 2015-04-07T00:00Z,
+    
+    
+    "description": ,
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": http://localhost:1313/2015/04/07/php-coder-codesniffer-osx/
+    }
+}
+    </script>
+    
+
+
+    
+
+    
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-79101-12', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+    
+
+    
+</head>
+<body class="nav-closed">
+
+  <div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+        
+        
+        
+            <h3>Contact me</h3>
+            <li class="nav-opened" role="presentation">
+            	<a href="https://Keybase.io/vjeantet">Keybase (secure msg)</a>
+            </li>
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="https://flipboard.com/@vjeantet">Flipboard magazines</a>
+            </li>
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="https://twitter.com/vjeantet">Twitter timeline</a>
+            </li>
+        
+            <h3>Follow me</h3>
+            <li class="nav-opened" role="presentation">
+            	<a href="https://github.com/vjeantet">Github repos</a>
+            </li>
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="/">Blog</a>
+            </li>
+        
+        
+    </ul>
+
+    
+    <a class="subscribe-button icon-feed" href="/index.xml">Subscribe</a>
+    
+</div>
+<span class="nav-cover"></span>
+
+
+ <div class="site-wrapper">
+
+
+
+<header class="main-header post-head no-cover">
+  <nav class="main-nav clearfix">
+
+
+  
+      <a class="blog-logo" href="http://localhost:1313/"><img src="/images/logo.png" alt="Home" /></a>
+  
+  
+      <a class="menu-button" href="#"><span class="burger">&#9776;</span><span class="word">Menu</span></a>
+  
+  </nav>
+</header>
+
+
+
+<main class="content" role="main">
+
+
+
+
+  <article class="post post">
+
+    <header class="post-header">
+        <h1 class="post-title">PHP, Coder, and Code Sniffer in OS X</h1>
+        <small></small>
+
+        <section class="post-meta">
+        
+          <time class="post-date" datetime="2015-04-07T00:00:00Z">
+            Apr 7, 2015
+          </time>
+        
+         
+        </section>
+    </header>
+
+    <section class="post-content">
+      
+
+<h3 id="php">PHP</h3>
+
+<p>I originally used the PHP package bundled with OS X. This doesn&rsquo;t seem to be easily maintainable since you would have an outdated PHP version. I&rsquo;ve since replaced this with <a href="https://github.com/Homebrew/homebrew-php"><code>homebrew-php</code></a> specifically the package <code>php54</code>.</p>
+
+<p><strong>Note:</strong> If you&rsquo;ve added some configurations in PHP which is most likely located at <code>/etc/php.ini</code>, you might want to copy the custom configurations over to your new PHP ini location which is <code>/usr/local/etc/php/5.4/php.ini</code> in my case. Also, PEAR needs to be reconfigured. <code>brew info php54</code> or <code>brew install php54</code> would note that you would need to invoke this commands to clean up PEAR configurations:</p>
+
+
+chmod -R ug+w /usr/local/Cellar/php54/5.4.38/lib/php
+pear config-set php_ini /usr/local/etc/php/5.4/php.ini system
+
+
+<p>I had an old installation of <code>PHP_CodeSniffer</code> and it got confusing when I tried to use <code>phpcs</code> since it was using the old sniffs rather than the ones that I recently updated.</p>
+
+<h3 id="code-sniffer">Code Sniffer</h3>
+
+<p>Installation of PHPCS is as easy as doing <code>composer global require &quot;squizlabs/php_codesniffer=*&quot;</code>.</p>
+
+<h3 id="coder">Coder</h3>
+
+<p>Installation of Coder is pretty much straightforward. Everything needed is <a href="https://www.drupal.org/node/1419988">here</a>. I&rsquo;ve installed it using <code>drush</code>.</p>
+
+<p>After installating Coder, you&rsquo;ll need to register the sniffs by invoking <code>phpcs --config-set installed_paths $HOME/.drush/coder/coder_sniffer</code>. Otherwise; you can do <code>phpcs --standard=path/to/sniffs/Drupal -- /path/to/file</code> to do the syntax check.</p>
+
+<p><strong>Note:</strong> PHPCS 1.x works with Coder 7.x-2.x while PHPCS 2.x works with Coder 8.x-2.x (source <a href="https://www.drupal.org/node/2342611">here</a> and <a href="https://www.drupal.org/node/2387871#comment-9409549">here</a>). I&rsquo;ve installed Coder 8.x-2.x which also works with Drupal 7 modules.</p>
+
+<p>There&rsquo;s a lot more you can do with PHPCS. One that I find useful is <code>phpcbf</code>. More usage examples <a href="https://www.drupal.org/node/1587138">here</a>.</p>
+
+    </section>
+
+
+  <footer class="post-footer">
+
+
+    
+
+
+
+
+
+
+
+
+<figure class="author-image">
+    <a class="img" href="http://localhost:1313/" style="background-image: url(/images/logo.png)"><span class="hidden">Valère JEANTET's Picture</span></a>
+</figure>
+
+
+<section class="author">
+  <h4><a href="http://localhost:1313/">Valère JEANTET</a></h4>
+  
+  <p>IT software and Security Engineer, Open source enthusiast.</p>
+  
+  <div class="author-meta">
+    <span class="author-location icon-location">Paris, France</span>
+    <span class="author-link icon-link"><a href="http://vjeantet.fr">http://vjeantet.fr</a></span>
+  </div>
+</section>
+
+
+
+
+    
+<section class="share">
+  <h4>Share this post</h4>
+  <a class="icon-twitter" style="font-size: 1.4em" href="https://twitter.com/share?text=PHP%2c%20Coder%2c%20and%20Code%20Sniffer%20in%20OS%20X&nbsp;-&nbsp;Val%c3%a8re%20JEANTET&amp;url=http%3a%2f%2flocalhost%3a1313%2f2015%2f04%2f07%2fphp-coder-codesniffer-osx%2f"
+      onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+      <span class="hidden">Twitter</span>
+  </a>
+  <a class="icon-facebook" style="font-size: 1.4em" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2flocalhost%3a1313%2f2015%2f04%2f07%2fphp-coder-codesniffer-osx%2f"
+      onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+      <span class="hidden">Facebook</span>
+  </a>
+  <a class="icon-pinterest" style="font-size: 1.4em" href="http://pinterest.com/pin/create/button/?url=http%3a%2f%2flocalhost%3a1313%2f2015%2f04%2f07%2fphp-coder-codesniffer-osx%2f&amp;description=PHP%2c%20Coder%2c%20and%20Code%20Sniffer%20in%20OS%20X"
+      onclick="window.open(this.href, 'pinterest-share','width=580,height=296');return false;">
+      <span class="hidden">Pinterest</span>
+  </a>
+  <a class="icon-google-plus" style="font-size: 1.4em" href="https://plus.google.com/share?url=http%3a%2f%2flocalhost%3a1313%2f2015%2f04%2f07%2fphp-coder-codesniffer-osx%2f"
+     onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+      <span class="hidden">Google+</span>
+  </a>
+</section>
+
+
+
+    
+
+<div id="disqus_thread"></div>
+<script>
+
+
+
+
+var disqus_config = function () {
+this.page.url = "http:\/\/localhost:1313\/2015\/04\/07\/php-coder-codesniffer-osx\/";  
+this.page.identifier = "http:\/\/localhost:1313\/2015\/04\/07\/php-coder-codesniffer-osx\/"; 
+};
+
+(function() { 
+var d = document, s = d.createElement('script');
+s.src = 'https://vjeantet.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+
+
+
+
+
+
+  </footer>
+</article>
+
+</main>
+
+
+  <aside class="read-next">
+  
+      <a class="read-next-story" style="no-cover" href="/2015/12/18/moving-to-jekyll/">
+          <section class="post">
+              <h2>Moving to Jekyll</h2>
+              
+          </section>
+      </a>
+  
+  
+      <a class="read-next-story prev" style="no-cover" href="/2015/04/06/php54-phpdbg-osx/">
+          <section class="post">
+              <h2>PHP 5.4 and PHPDBG in OS X</h2>
+          </section>
+      </a>
+  
+</aside>
+
+
+
+    <footer class="site-footer clearfix">
+        <section class="copyright"><a href="">Valère JEANTET</a> All rights reserved</section>
+        
+        <section class="poweredby">Proudly generated by <a class="icon-hugo" href="http://gohugo.io">HUGO</a>, with <a class="icon-theme" href="https://github.com/vjeantet/hugo-theme-casper">Casper</a> theme</section>
+        
+    </footer>
+    </div>
+    <script type="text/javascript" src="/js/jquery.js"></script>
+    <script type="text/javascript" src="/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="/js/index.js"></script>
+    
+<script data-no-instant>document.write('<script src="/livereload.js?port=1313&mindelay=10"></' + 'script>')</script></body>
+</html>
+

@@ -1,0 +1,39 @@
+baseurl = "http://fr.ench.info"
+copyright = "All rights reserved"
+disqusshortname = "dsdeiz"
+languagecode = "en-US"
+paginate = 5
+pluralizelisttitles = false
+theme = "casper"
+title = "fr.ench.info"
+[[menu.main]]
+name = "Home"
+url = "/"
+weight = 103
+[[menu.main]]
+name = "About"
+url = "/about"
+weight = 102
+[[menu.main]]
+name = "Resume"
+url = "/resume"
+weight = 101
+
+[params]
+author = "Arnold French"
+authorlocation = "Philippines"
+authorwebsite = "http://fr.ench.info"
+authorbio = "Yet another web developer."
+cover = "images/night.jpg"
+description = "blog about tech"
+githubName = "dsdeiz"
+googleAnalyticsUserID = "UA-79101-12"
+hideHUGOSupport = false
+logo = "images/logo.jpg"
+twitterName = "breadpan"
+[permalinks]
+post = "/:year/:month/:title/"
+[sitemap]
+ChangeFreq = ""
+Filename = "sitemap.xml"
+Priority = "-1"

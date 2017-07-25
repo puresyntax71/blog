@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tools on Valère JEANTET</title>
+    <link>http://localhost:1313/categories/tools/</link>
+    <description>Recent content in Tools on Valère JEANTET</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr-FR</language>
+    <copyright>All rights reserved</copyright>
+    <lastBuildDate>Sat, 19 Dec 2015 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://localhost:1313/categories/tools/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Password Management using Password Store</title>
+      <link>http://localhost:1313/2015/12/19/password-management-using-password-store/</link>
+      <pubDate>Sat, 19 Dec 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/2015/12/19/password-management-using-password-store/</guid>
+      <description>Password Store is a command line utility for managing your passwords. The passwords are stored in an encrypted file which makes use of gpg. It also allows you to use git to track password changes.
+pass isn&amp;rsquo;t as feature-rich compared to Last Pass or 1Password though.
+Setup Setup is pretty easy. It only requires gpg which can be installed via brew. Optionally, you can install git if you want to track changes in your storage.</description>
+    </item>
+    
+  </channel>
+</rss>

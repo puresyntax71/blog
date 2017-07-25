@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Development on Valère JEANTET</title>
+    <link>http://localhost:1313/categories/development/</link>
+    <description>Recent content in Development on Valère JEANTET</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr-FR</language>
+    <copyright>All rights reserved</copyright>
+    <lastBuildDate>Tue, 07 Apr 2015 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://localhost:1313/categories/development/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>PHP, Coder, and Code Sniffer in OS X</title>
+      <link>http://localhost:1313/2015/04/07/php-coder-codesniffer-osx/</link>
+      <pubDate>Tue, 07 Apr 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/2015/04/07/php-coder-codesniffer-osx/</guid>
+      <description>PHP I originally used the PHP package bundled with OS X. This doesn&amp;rsquo;t seem to be easily maintainable since you would have an outdated PHP version. I&amp;rsquo;ve since replaced this with homebrew-php specifically the package php54.
+Note: If you&amp;rsquo;ve added some configurations in PHP which is most likely located at /etc/php.ini, you might want to copy the custom configurations over to your new PHP ini location which is /usr/local/etc/php/5.4/php.ini in my case.</description>
+    </item>
+    
+    <item>
+      <title>PHP 5.4 and PHPDBG in OS X</title>
+      <link>http://localhost:1313/2015/04/06/php54-phpdbg-osx/</link>
+      <pubDate>Mon, 06 Apr 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/2015/04/06/php54-phpdbg-osx/</guid>
+      <description>I got PHPDBG enabled in PHP 5.4 although I&amp;rsquo;ve never bothered giving it a try. Recently, I decided to play around with it to try to compare it with Xdebug. I tested it with a minimal Drupal installation.
+Installation PHP and PHPDBG I use homebrew-php to install PHP 5.4. Versions 5.4+ have the flag --with-phpdbg if you wish to include PHPDBG during installation therefore installation is simply via invoking brew install php54 --with-phpdbg.</description>
+    </item>
+    
+  </channel>
+</rss>

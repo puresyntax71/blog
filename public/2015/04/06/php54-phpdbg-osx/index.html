@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="fr-FR">
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    
+    
+        <meta name="twitter:card" content="summary"/>
+    
+
+
+
+<meta name="twitter:title" content="PHP 5.4 and PHPDBG in OS X"/>
+<meta name="twitter:description" content=""/>
+<meta name="twitter:site" content="@vjeantet"/>
+
+
+
+  	<meta property="og:title" content="PHP 5.4 and PHPDBG in OS X &middot; Valère JEANTET" />
+  	<meta property="og:site_name" content="Valère JEANTET" />
+  	<meta property="og:url" content="http://localhost:1313/2015/04/06/php54-phpdbg-osx/" />
+
+    
+        
+            <meta property="og:image" content="/images/cover_polenord.jpg"/>
+        
+    
+
+    
+    <meta property="og:description" content="" />
+  	<meta property="og:type" content="article" />
+    <meta property="article:published_time" content="2015-04-06T00:00:00Z" />
+
+    
+    
+
+    <title>PHP 5.4 and PHPDBG in OS X &middot; Valère JEANTET</title>
+
+    
+    <meta name="description" content="I got PHPDBG enabled in PHP 5.4 although I&amp;rsquo;ve never bothered giving it a try. Recently, I decided to play around with it to try to compare it with Xdebug." />
+    
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="/images/favicon.ico">
+	  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png" />
+
+    <link rel="stylesheet" type="text/css" href="/css/screen.css" />
+    <link rel="stylesheet" type="text/css" href="/css/nav.css" />
+
+    
+
+    
+
+    
+      
+          <link href="/index.xml" rel="alternate" type="application/rss+xml" title="Valère JEANTET" />
+      
+      
+    
+    <meta name="generator" content="Hugo 0.25.1" />
+
+    <link rel="canonical" href="http://localhost:1313/2015/04/06/php54-phpdbg-osx/" />
+
+    
+      
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": ,
+        "logo": http://localhost:1313/images/logo.png
+    },
+    "author": {
+        "@type": "Person",
+        "name": ,
+        
+        "image": {
+            "@type": "ImageObject",
+            "url": http://localhost:1313/images/logo.png,
+            "width": 250,
+            "height": 250
+        }, 
+        
+        "url": http://vjeantet.fr,
+        "sameAs": [
+            
+            
+             
+             
+             
+             
+             
+            
+        ],
+        "description": IT software and Security Engineer, Open source enthusiast.
+        
+    },
+    "headline": PHP 5.4 and PHPDBG in OS X,
+    "name": PHP 5.4 and PHPDBG in OS X,
+    "wordCount": 602,
+    "timeRequired": "PT3M",
+    "inLanguage": {
+      "@type": "Language",
+      "alternateName": en
+    },
+    "url": http://localhost:1313/2015/04/06/php54-phpdbg-osx/,
+    "datePublished": 2015-04-06T00:00Z,
+    "dateModified": 2015-04-06T00:00Z,
+    
+    
+    "description": ,
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": http://localhost:1313/2015/04/06/php54-phpdbg-osx/
+    }
+}
+    </script>
+    
+
+
+    
+
+    
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-79101-12', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+    
+
+    
+</head>
+<body class="nav-closed">
+
+  <div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+        
+        
+        
+            <h3>Contact me</h3>
+            <li class="nav-opened" role="presentation">
+            	<a href="https://Keybase.io/vjeantet">Keybase (secure msg)</a>
+            </li>
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="https://flipboard.com/@vjeantet">Flipboard magazines</a>
+            </li>
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="https://twitter.com/vjeantet">Twitter timeline</a>
+            </li>
+        
+            <h3>Follow me</h3>
+            <li class="nav-opened" role="presentation">
+            	<a href="https://github.com/vjeantet">Github repos</a>
+            </li>
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="/">Blog</a>
+            </li>
+        
+        
+    </ul>
+
+    
+    <a class="subscribe-button icon-feed" href="/index.xml">Subscribe</a>
+    
+</div>
+<span class="nav-cover"></span>
+
+
+ <div class="site-wrapper">
+
+
+
+<header class="main-header post-head no-cover">
+  <nav class="main-nav clearfix">
+
+
+  
+      <a class="blog-logo" href="http://localhost:1313/"><img src="/images/logo.png" alt="Home" /></a>
+  
+  
+      <a class="menu-button" href="#"><span class="burger">&#9776;</span><span class="word">Menu</span></a>
+  
+  </nav>
+</header>
+
+
+
+<main class="content" role="main">
+
+
+
+
+  <article class="post post">
+
+    <header class="post-header">
+        <h1 class="post-title">PHP 5.4 and PHPDBG in OS X</h1>
+        <small></small>
+
+        <section class="post-meta">
+        
+          <time class="post-date" datetime="2015-04-06T00:00:00Z">
+            Apr 6, 2015
+          </time>
+        
+         
+        </section>
+    </header>
+
+    <section class="post-content">
+      
+
+<p>I got <a href="http://phpdbg.com/">PHPDBG</a> enabled in PHP 5.4 although I&rsquo;ve never bothered giving it a try. Recently, I decided to play around with it to try to compare it with Xdebug. I tested it with a minimal Drupal installation.</p>
+
+<h3 id="installation">Installation</h3>
+
+<h4 id="php-and-phpdbg">PHP and PHPDBG</h4>
+
+<p>I use <a href="https://github.com/Homebrew/homebrew-php"><code>homebrew-php</code></a> to install PHP 5.4. Versions 5.4+ have the flag <code>--with-phpdbg</code> if you wish to include PHPDBG during installation therefore installation is simply via invoking <code>brew install php54 --with-phpdbg</code>.</p>
+
+<p>The version of PHPDBG that comes with the <code>php54</code> package is <code>v0.3.2</code>. I gave this a try but didn&rsquo;t much like it as it had a lot of bugs. What worked for me was replacing it with the one that had the latest changes (specifically <a href="https://github.com/krakjoe/phpdbg/commit/c6802cdf5f4f0da213b365510df056b177d5c7e2">this</a>). It still had a few bugs in it but it was way better. I had to change the source of <code>homebrew-php</code> to make it work. Here&rsquo;s a diff of my changes at <code>homebrew-php</code> installation directory:</p>
+
+
+diff --git a/Abstract/abstract-php-version.rb b/Abstract/abstract-php-version.rb
+index 943b259..9b7dee8 100644
+--- a/Abstract/abstract-php-version.rb
++++ b/Abstract/abstract-php-version.rb
+@@ -1,10 +1,10 @@
+ class AbstractPhpVersion < Formula
+   module PhpdbgDefs
+-    PHPDBG_SRC_TARBAL = 'https://github.com/krakjoe/phpdbg/archive/v0.3.2.tar.gz'
++    PHPDBG_SRC_TARBAL = 'https://github.com/krakjoe/phpdbg/archive/master.tar.gz'
+     PHPDBG_CHECKSUM   = {
+-                        :md5    => '84255abff00fb31e338d03564c3cc4e4',
+-                        :sha1   => 'c57174ab235ec69997e1a37e6d2afe3e4edfb749',
+-                        :sha256 => 'feab6e29ef9a490aa53332fe014e8026d89d970acc5105f37330b2f31e711bbd',
++                        :md5    => '5a9346fe533fc486e2427cb0517b7159',
++                        :sha1   => '25e53a5ff1c66afd8c34a98404d5242e61b4d55b',
++                        :sha256 => '06eb09e5cb5deac4812a0ed7305e9d640f1ec6b6fbfdc6ea9a24bf7ea9d01929',
+                       }
+   end
+ 
+
+
+<h4 id="drupal">Drupal</h4>
+
+<p>I had a minimal installation of Drupal. I simply grabbed Drupal 7 and installed it via <code>drush si --db-url=sqlite://sites/default/files/.ht.sqlite -y</code>.</p>
+
+<h3 id="set-up">Set Up</h3>
+
+<p>The documentation is a bit difficult to understand considering that I am relatively new to debugging. Unlike Xdebug, you&rsquo;ll need to mock a webserver to get PHPDBG to work with web applications like Drupal. An example can be found from both the <a href="https://github.com/krakjoe/phpdbg/blob/master/web-bootstrap.php">repository</a> and <a href="http://phpdbg.com/docs/mocking-webserver">documentation</a>. I used it like this:</p>
+
+
+$ cd /path/to/drupal
+$ phpdbg
+prompt> exec index.php
+prompt> ev include '/path/to/web-bootstrap.php';
+
+
+<p>The file needs to be modified for it to work with Drupal. I made the following changes to it:</p>
+
+
+diff --git a/web-bootstrap-1.php b/web-bootstrap.php
+index 7b8c5d3..da9333b 100644
+--- a/web-bootstrap-1.php
++++ b/web-bootstrap.php
+@@ -11,7 +11,7 @@
+ if (!defined('PHPDBG_BOOTSTRAPPED')) 
+ {
+     /* define these once */
+-    define("PHPDBG_BOOTPATH", "/opt/php-zts/htdocs");
++    define("PHPDBG_BOOTPATH", "/path/to/drupal");
+     define("PHPDBG_BOOTSTRAP", "index.php");
+     define("PHPDBG_BOOTSTRAPPED", sprintf("/%s", PHPDBG_BOOTSTRAP)); 
+ }
+@@ -49,13 +49,14 @@ $_SERVER = array
+   'SERVER_PROTOCOL' => 'HTTP/1.1',
+   'REQUEST_METHOD' => 'GET',
+   'QUERY_STRING' => '',
+-  'REQUEST_URI' => PHPDBG_BOOTSTRAPPED,
++  // 'REQUEST_URI' => PHPDBG_BOOTSTRAPPED,
++  'REQUEST_URI' => '/node/1',
+   'SCRIPT_NAME' => PHPDBG_BOOTSTRAPPED,
+   'PHP_SELF' => PHPDBG_BOOTSTRAPPED,
+   'REQUEST_TIME' => time(),
+ );
+ 
+-$_GET = array();
++$_GET = array('q' => 'node/1');
+ $_REQUEST = array();
+ $_POST = array();
+ $_COOKIE = array();
+
+
+<h3 id="basic-usages">Basic Usages</h3>
+
+<p>Set a breakpoint by invoking <code>break func_name</code> and finally invoking <code>run</code> to start debugging. <code>step</code> would step through each line of code. <code>ev</code> can be used to evaluate expressions. An example is inspecting the available variables in the current scope and stack frame.</p>
+
+<p>I did it like this:</p>
+
+
+prompt> exec index.php
+[Execution context not changed]
+prompt> ev include '/private/tmp/web-bootstrap.php';
+1
+prompt> run
+[Breakpoint #0 in node_load() at /path/to/drupal/modules/node/node.module:962, hits: 1]
+>00962: function node_load($nid = NULL, $vid = NULL, $reset = FALSE) {
+ 00963:   $nids = (isset($nid) ? array($nid) : array());
+ 00964:   $conditions = (isset($vid) ? array('vid' => $vid) : array());
+prompt> s
+>00963:   $nids = (isset($nid) ? array($nid) : array());
+ 00964:   $conditions = (isset($vid) ? array('vid' => $vid) : array());
+ 00965:   $node = node_load_multiple($nids, $conditions, $reset);
+prompt>
+>00964:   $conditions = (isset($vid) ? array('vid' => $vid) : array());
+ 00965:   $node = node_load_multiple($nids, $conditions, $reset);
+ 00966:   return $node ? reset($node) : FALSE;
+prompt> ev $conditions
+
+prompt> ev $nid
+1
+prompt> s
+>00965:   $node = node_load_multiple($nids, $conditions, $reset);
+ 00966:   return $node ? reset($node) : FALSE;
+ 00967: }
+prompt> ev $conditions
+Array
+(
+)
+
+prompt>
+
+
+<p>I haven&rsquo;t figured out some of the other basic usages such as stepping over a line rather than stepping through it.</p>
+
+<p>More usage instructions/examples on the <a href="http://phpdbg.com/docs">documentation</a>, <a href="https://github.com/krakjoe/phpdbg/tree/master/tests">tests</a>, and <a href="https://github.com/bwoebi/phpdbg-docs">here</a>.</p>
+
+    </section>
+
+
+  <footer class="post-footer">
+
+
+    
+
+
+
+
+
+
+
+
+<figure class="author-image">
+    <a class="img" href="http://localhost:1313/" style="background-image: url(/images/logo.png)"><span class="hidden">Valère JEANTET's Picture</span></a>
+</figure>
+
+
+<section class="author">
+  <h4><a href="http://localhost:1313/">Valère JEANTET</a></h4>
+  
+  <p>IT software and Security Engineer, Open source enthusiast.</p>
+  
+  <div class="author-meta">
+    <span class="author-location icon-location">Paris, France</span>
+    <span class="author-link icon-link"><a href="http://vjeantet.fr">http://vjeantet.fr</a></span>
+  </div>
+</section>
+
+
+
+
+    
+<section class="share">
+  <h4>Share this post</h4>
+  <a class="icon-twitter" style="font-size: 1.4em" href="https://twitter.com/share?text=PHP%205.4%20and%20PHPDBG%20in%20OS%20X&nbsp;-&nbsp;Val%c3%a8re%20JEANTET&amp;url=http%3a%2f%2flocalhost%3a1313%2f2015%2f04%2f06%2fphp54-phpdbg-osx%2f"
+      onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+      <span class="hidden">Twitter</span>
+  </a>
+  <a class="icon-facebook" style="font-size: 1.4em" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2flocalhost%3a1313%2f2015%2f04%2f06%2fphp54-phpdbg-osx%2f"
+      onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+      <span class="hidden">Facebook</span>
+  </a>
+  <a class="icon-pinterest" style="font-size: 1.4em" href="http://pinterest.com/pin/create/button/?url=http%3a%2f%2flocalhost%3a1313%2f2015%2f04%2f06%2fphp54-phpdbg-osx%2f&amp;description=PHP%205.4%20and%20PHPDBG%20in%20OS%20X"
+      onclick="window.open(this.href, 'pinterest-share','width=580,height=296');return false;">
+      <span class="hidden">Pinterest</span>
+  </a>
+  <a class="icon-google-plus" style="font-size: 1.4em" href="https://plus.google.com/share?url=http%3a%2f%2flocalhost%3a1313%2f2015%2f04%2f06%2fphp54-phpdbg-osx%2f"
+     onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+      <span class="hidden">Google+</span>
+  </a>
+</section>
+
+
+
+    
+
+<div id="disqus_thread"></div>
+<script>
+
+
+
+
+var disqus_config = function () {
+this.page.url = "http:\/\/localhost:1313\/2015\/04\/06\/php54-phpdbg-osx\/";  
+this.page.identifier = "http:\/\/localhost:1313\/2015\/04\/06\/php54-phpdbg-osx\/"; 
+};
+
+(function() { 
+var d = document, s = d.createElement('script');
+s.src = 'https://vjeantet.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+
+
+
+
+
+
+  </footer>
+</article>
+
+</main>
+
+
+  <aside class="read-next">
+  
+      <a class="read-next-story" style="no-cover" href="/2015/04/07/php-coder-codesniffer-osx/">
+          <section class="post">
+              <h2>PHP, Coder, and Code Sniffer in OS X</h2>
+              
+          </section>
+      </a>
+  
+  
+</aside>
+
+
+
+    <footer class="site-footer clearfix">
+        <section class="copyright"><a href="">Valère JEANTET</a> All rights reserved</section>
+        
+        <section class="poweredby">Proudly generated by <a class="icon-hugo" href="http://gohugo.io">HUGO</a>, with <a class="icon-theme" href="https://github.com/vjeantet/hugo-theme-casper">Casper</a> theme</section>
+        
+    </footer>
+    </div>
+    <script type="text/javascript" src="/js/jquery.js"></script>
+    <script type="text/javascript" src="/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="/js/index.js"></script>
+    
+<script data-no-instant>document.write('<script src="/livereload.js?port=1313&mindelay=10"></' + 'script>')</script></body>
+</html>
+
