@@ -1,12 +1,12 @@
 +++
-draft = true
 tags = ["osx", "tools"]
 title = "Trying Out Alacritty"
-date = "2017-07-23"
+date = "2017-07-26T07:59:39+08:00"
 categories = [
   "tools"
 ]
 +++
+
 Recently stumbled on this [comment][1] from [lobste.rs][2]. I have heard of [Alacritty][3] before but never had a chance to try it out. This time I have decided to at least check it out.
 
 ## What is Alacritty?
