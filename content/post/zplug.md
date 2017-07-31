@@ -1,6 +1,5 @@
 +++
 date = "2017-07-29T08:48:54+08:00"
-draft = true
 tags = ["tools", "commandline"]
 title = "Zplug and Others"
 categories = ["tools"]
