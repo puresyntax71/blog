@@ -27,7 +27,7 @@ After installation the configuration can be found at `$HOME/.config/alacritty/al
 
 I really like **Alacritty** and while it is fast, it does still need some features and fixes. It sacrificed features over speed. While I like that it has lesser features compared to most terminal emulators, it may have went beyond in leaving its features behind. One comment from [/r/programming][10] says this:
 
-> Actually I'm impressed. Well at first I was. It IS fast. About 6x faster than Terminology. Very well done. Terminology is one of the fastest out there and tries to balance features and speed. So Alacritty has a dearth of features - I'll give it that it's new and whatever... BUT I doubt this speed can be maintained where it is AND keep things nice/usable.
+<div class="reddit-embed" data-embed-media="www.redditmedia.com" data-embed-parent="false" data-embed-live="false" data-embed-uuid="2a03260a-6e92-4c3c-885b-03b739087f94" data-embed-created="2017-09-16T16:49:21.841Z"><a href="https://www.reddit.com/r/programming/comments/5mflek/alacritty_a_gpuaccelerated_terminal_emulator/dc3r3zc/">Comment</a> from discussion <a href="https://www.reddit.com/r/programming/comments/5mflek/alacritty_a_gpuaccelerated_terminal_emulator/">Alacritty, a GPU-accelerated terminal emulator written in Rust</a>.</div><script async src="https://www.redditstatic.com/comment-embed.js"></script>
 
 Here are some features that I find might be useful for me and luckily there are already issues on Github to implement these features (these are also MacOS specific):
 
