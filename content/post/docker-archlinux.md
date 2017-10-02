@@ -1,5 +1,4 @@
 +++
-draft = true
 date = "2017-09-17T00:28:51+08:00"
 slug = "docker-archlinux"
 tags = ["archlinux","tools"]
