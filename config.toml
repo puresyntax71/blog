@@ -1,13 +1,13 @@
 baseURL = "http://localhost:1313"
 languageCode = "en"
-title = "Hugo Blog"
+title = "Strict Panda"
 theme = "hugo-nuo"
 enableRobotsTXT = true
 PygmentsCodeFences = true
 canonifyurls = true
 
 # Disqus Username
-disqusShortname = "disqus_shortname"
+# disqusShortname = "disqus_shortname"
 
 # Google Analytics UA number
 googleAnalytics = "UA-XXXXXXXX-X"
@@ -36,10 +36,10 @@ copyright = "© This post is licensed under a Creative Commons Attribution-NonCo
 
 # Add your own params here
 [params]
-  author = "Ritchie Zhu"
+  author = ""
   avatar = "/img/avatar.jpg"
-  seotitle = "Hugo Blog (SEO Version)"
-  subtitle = "~ Keep It Simple & Stupid ~"
+  seotitle = "Strict Panda"
+  subtitle = ""
   description = "Hugo is one of the most popular open-source static site generators. With its amazing speed and flexibility, Hugo makes building websites fun again."
   paginate = 10
 
