@@ -1,0 +1,39 @@
+<head>
+    <title>{{ .Title}}{{ if not .IsHome }} &middot; {{ .Site.Title }}{{ end }}</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {{ with .Site.Params.author }}<meta name="author" content="{{ . }}">{{ end }}
+    {{ with .Site.Params.description }}<meta name="description" content="{{ . }}">{{ end }}
+    {{ with .Site.Params.keywords }}<meta name="keywords" content="{{ . }}">{{ end }}
+    {{ hugo.Generator }}
+
+    {{ template "_internal/opengraph.html" . }}
+
+    {{ "<!--Favicon-->" | safeHTML }}
+    <link rel="apple-touch-icon" href="{{ "apple-touch-icon.png" | absURL }}">
+    <link rel="shortcut icon" href="{{ "favicon.ico" | absURL }}" type="image/x-icon">
+
+    {{ with .OutputFormats.Get "rss" -}}
+    {{ "<!-- RSS -->" | safeHTML }}
+    {{ printf `<link href="%s" rel="%s" type="%s" title="%s" />` .Permalink .Rel .MediaType.Type $.Site.Title | safeHTML }}
+    {{- end }}
+
+    {{ "<!-- Font Awesome -->" | safeHTML }}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/solid.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/brands.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/fontawesome.min.css">
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/{{ .Site.Params.highlightjsTheme | default "default" }}.min.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
+    {{ range .Site.Params.highlightjsLang }}<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/languages/{{ . }}.min.js"></script>{{ end }}
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    {{ "<!-- Google Fonts -->" | safeHTML }}
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,700,700i" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Overpass+Mono&display=swap" rel="stylesheet" type="text/css">
+
+    {{ $options := (dict "outputStyle" "compressed" "enableSourceMap" true "includePaths" (slice "node_modules")) }}
+    {{ $style := resources.Get "sass/main.scss" | resources.ToCSS $options }}
+    <link rel="stylesheet" href="{{ $style.Permalink }}">
+</head>
