@@ -1,6 +1,5 @@
 +++
 date = "2017-09-17T00:28:51+08:00"
-slug = "docker-archlinux"
 tags = ["archlinux","tools"]
 title = "Docker in Arch Linux"
 +++
@@ -13,13 +12,13 @@ This was my first time installing Docker in Arch Linux.
 
 Installation for docker packages was pretty easy. All I had to do was:
 
-```bash
+```shell
 $ pacman -Sy docker docker-compose docker-machine
 ```
 
 I then needed to install the driver for `docker-machine` which would commonly be [Virtualbox][3]. I've installed Virtualbox with the following:
 
-```
+```shell
 $ pacman -Sy virtualbox linux-headers virtualbox-host-dkms
 ```
 
@@ -31,13 +30,13 @@ Before any Virtualbox configuration, in my BIOS, I needed to first enable "SVM m
 
 I've then enabled modules needed to get `docker-machine` working:
 
-```
+```shell
 $ modprobe -a vboxdrv vboxnetflt vboxnetadp
 ```
 
 I can then finally get a new virtual machine with `docker-machine`:
 
-```
+```shell
 $ docker-machine create default
 ```
 

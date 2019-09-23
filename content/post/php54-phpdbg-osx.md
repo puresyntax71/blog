@@ -1,5 +1,5 @@
 ---
-categories: development
+categories: ['development']
 date: 2015-04-06T00:00:00Z
 title: PHP 5.4 and PHPDBG in OS X
 tags: []

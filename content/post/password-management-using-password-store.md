@@ -1,5 +1,5 @@
 ---
-categories: tools
+categories: ["tools"]
 date: 2015-12-19T00:00:00Z
 tags: ["tools", "osx", "commandline"]
 title: Password Management using Password Store
@@ -13,20 +13,20 @@ title: Password Management using Password Store
 
 Setup is pretty easy. It only requires `gpg` which can be installed via `brew`. Optionally, you can install `git` if you want to track changes in your storage.
 
-{{< highlight shell >}}
+```shell
 $ brew install gpg pass
-{{< / highlight >}}
+```
 
 ### GPG (skip if you already have a key)
 You would need to set up your gpg key if you don't have one.
 
-{{< highlight shell >}}
+```shell
 $ gpg --gen-key
-{{< / highlight >}}
+```
 
 You will then be presented with this prompt:
 
-{{< highlight shell >}}
+```shell
 $ gpg --gen-key
 gpg (GnuPG) 1.4.19; Copyright (C) 2015 Free Software Foundation, Inc.
 This is free software: you are free to change and redistribute it.
@@ -38,7 +38,7 @@ Please select what kind of key you want:
    (3) DSA (sign only)
    (4) RSA (sign only)
 Your selection?
-{{< / highlight >}}
+```
 
 Select the default (RSA and RSA). The other steps will depend on how you want your key to be set up.
 
@@ -46,9 +46,9 @@ Select the default (RSA and RSA). The other steps will depend on how you want yo
 
 Initialize `pass`:
 
-{{< highlight shell >}}
+```shell
 $ pass init
-{{< / highlight >}}
+```
 
 This will create a directory in your `$HOME` called `.password-store`.
 
@@ -60,7 +60,7 @@ This will create a directory in your `$HOME` called `.password-store`.
 
 `pass` treats `/` similar to subfolders. An example is this:
 
-{{< highlight shell >}}
+```shell
 $ pass
 Password Store
 ├── foo
@@ -68,11 +68,11 @@ Password Store
 │   └── baz.gpg
 └── bar
     └── foo.gpg
-{{< / highlight >}}
+```
 
 This can be accomplished by invoking the commands:
 
-{{< highlight shell >}}
+```shell
 $ pass insert foo/bar
 Enter password for foo/bar:
 Retype password for foo/bar:
@@ -82,15 +82,15 @@ Retype password for foo/baz:
 $ pass insert bar/foo
 Enter password for bar/foo:
 Retype password for bar/foo:
-{{< / highlight >}}
+```
 
 ### Editing
 
 Editing is similar to inserting.
 
-{{< highlight shell >}}
+```shell
 $ pass edit foo/bar
-{{< / highlight >}}
+```
 
 You will then be asked to enter your password for your key. This will open up your default editor where you can modify your password.
 
@@ -100,9 +100,9 @@ This is similar to editing in which `pass` would open up a prompt which asks you
 
 To display your password, invoke this command:
 
-{{< highlight shell >}}
+```shell
 $ pass foo/bar
-{{< / highlight >}}
+```
 
 To copy your password in the clipboard, just add the `-c` flag. `pass` removes it from the clipboard after 45 seconds.
 
@@ -112,10 +112,10 @@ To copy your password in the clipboard, just add the `-c` flag. `pass` removes i
 
 A quick rundown on using `pass` with `git`:
 
-{{< highlight shell >}}
+```shell
 $ pass git remote add <alias> <remote>
 $ pass git push
-{{< / highlight >}}
+```
 
 Everytime you insert, modify, or delete a password, `pass` issues a commit.
 

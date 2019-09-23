@@ -1,3 +1,0 @@
-body{font-family:"Roboto", Helvetica, Arial, sans-serif;font-size:18px;line-height:1.7em}h1,h2,h3,h4,h5,h6{font-family:"Roboto", Helvetica, Arial, sans-serif;line-height:1.2em}p,ol,ul,dl,.math-display{line-height:1.7em}.call-out{height:360px}blockquote{margin-left:-1.5em;padding-left:1.5em;color:rgba(56,56,56,0.5);font-style:italic}a{transition:0.5s}pre,code{font-family:"Overpass Mono", monospace}pre>code.hljs{border-radius:0.3em;padding:1em}p code,li code,code{padding:0.1em 0.5em;border-radius:0.3em}ol,ul{list-style-position:outside;padding-left:1em}header.site-header,div.content>article{float:none;display:block}div.content>article{border-bottom:0}@media (min-width: 768px){div.content>article{width:50em;padding:5% 0;margin:0 auto}}
-
-/*# sourceMappingURL=main.css.map */

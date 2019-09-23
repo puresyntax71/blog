@@ -1,5 +1,5 @@
 ---
-categories: jekyll
+categories: ['jekyll']
 date: 2015-12-18T00:00:00Z
 title: Moving to Jekyll
 tags: []
