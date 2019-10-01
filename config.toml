@@ -10,7 +10,7 @@ enableGitInfo = false # use git commit log to generate lastmod record # 可根�
 
 # Syntax highlighting by Chroma. NOTE: Don't enable `highlightInClient` and `chroma` at the same time!
 pygmentsOptions = "linenos=table"
-pygmentsCodefences = true
+pygmentsCodefences = false
 pygmentsUseClasses = true
 pygmentsCodefencesGuessSyntax = true
 
@@ -77,7 +77,7 @@ copyright = ""            # default: author.name ↓        # 默认为下面配
   moreMeta = true
 
   # Syntax highlighting by highlight.js
-  highlightInClient = false
+  highlightInClient = true
 
   # 一些全局开关，你也可以在每一篇内容的 front matter 中针对单篇内容关闭或开启某些功能，在 archetypes/default.md 查看更多信息。
   # Some global options, you can also close or open something in front matter for a single post, see more information from `archetypes/default.md`.
