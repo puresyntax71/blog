@@ -16,7 +16,7 @@ setup:
         - yarn build
     artifacts:
         paths:
-            - themes/even
+            - themes/even/
     only:
         - master
     cache:
@@ -31,7 +31,7 @@ build:
         - hugo
     artifacts:
         paths:
-            - public
+            - public/
     only:
         - master
     dependencies:
