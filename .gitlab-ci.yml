@@ -2,12 +2,13 @@ variables:
     GIT_SUBMODULE_STRATEGY: recursive
 
 stages:
+    - setup
     - build
     - deploy
 
-build:
+setup:
     image: node:6.17.1
-    stage: build
+    stage: setup
     before_script:
         - cd themes/even/
         - yarn install
@@ -23,13 +24,13 @@ build:
             - node_modules/
             - .yarn
 
-# deploy:
-#     image: registry.gitlab.com/pages/hugo:latest
-#     stage: deploy
-#     script:
-#         - hugo
-#     artifacts:
-#         paths:
-#             - public
-#     only:
-#         - master
+build:
+    image: registry.gitlab.com/pages/hugo:latest
+    stage: build
+    script:
+        - hugo
+    artifacts:
+        paths:
+            - public
+    only:
+        - master
