@@ -10,10 +10,21 @@ build:
     stage: build
     script:
         - cd themes/even
-        - npm i
-        - npm build
+        - yarn install
+        - yarn build
     artifacts:
         paths:
             - themes/even
     only:
         - master
+
+# deploy:
+#     image: registry.gitlab.com/pages/hugo:latest
+#     stage: deploy
+#     script:
+#         - hugo
+#     artifacts:
+#         paths:
+#             - public
+#     only:
+#         - master
