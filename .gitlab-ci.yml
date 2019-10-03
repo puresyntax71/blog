@@ -34,3 +34,17 @@ build:
             - public
     only:
         - master
+    dependencies:
+        - setup
+
+deploy:
+    image: node:latest
+    stage: deploy
+    before_script:
+        - npm i -g netlify-cli
+    script:
+        - netlify deploy --site $NETLIFY_SITE_ID --auth $NETLIFY_AUTH_TOKEN --prod
+    only:
+        - master
+    dependencies:
+        - build
