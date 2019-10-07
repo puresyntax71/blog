@@ -7,9 +7,9 @@ tags: []
 
 I got [PHPDBG](http://phpdbg.com/) enabled in PHP 5.4 although I've never bothered giving it a try. Recently, I decided to play around with it to try to compare it with Xdebug. I tested it with a minimal Drupal installation.
 
-### Installation
+## Installation
 
-#### PHP and PHPDBG
+### PHP and PHPDBG
 
 I use [`homebrew-php`](https://github.com/Homebrew/homebrew-php) to install PHP 5.4. Versions 5.4+ have the flag `--with-phpdbg` if you wish to include PHPDBG during installation therefore installation is simply via invoking `brew install php54 --with-phpdbg`.
 
@@ -36,11 +36,11 @@ index 943b259..9b7dee8 100644
    end
 ```
 
-#### Drupal
+### Drupal
 
 I had a minimal installation of Drupal. I simply grabbed Drupal 7 and installed it via `drush si --db-url=sqlite://sites/default/files/.ht.sqlite -y`.
 
-### Set Up
+## Set Up
 
 The documentation is a bit difficult to understand considering that I am relatively new to debugging. Unlike Xdebug, you'll need to mock a webserver to get PHPDBG to work with web applications like Drupal. An example can be found from both the [repository](https://github.com/krakjoe/phpdbg/blob/master/web-bootstrap.php) and [documentation](http://phpdbg.com/docs/mocking-webserver). I used it like this:
 
@@ -86,7 +86,7 @@ index 7b8c5d3..da9333b 100644
  $_COOKIE = array();
 ```
 
-### Basic Usages
+## Basic Usages
 
 Set a breakpoint by invoking `break func_name` and finally invoking `run` to start debugging. `step` would step through each line of code. `ev` can be used to evaluate expressions. An example is inspecting the available variables in the current scope and stack frame.
 
