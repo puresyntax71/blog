@@ -20,7 +20,7 @@ variables:
 
 The default stage is `test` althought I've defined 3 stages for the deployment:
 
-1. **Setup**: Sets up the theme even --- installing the necessary `npm` modules using yarn and building the theme.
+1. **Setup**: Sets up the theme `even` --- installing the necessary `npm` modules using `yarn` and building the theme.
 2. **Build**: Builds the actual hugo website with the output directory set to the default (`public`).
 3. **Deploy**: Deploys the site to Netlify.
 
@@ -35,7 +35,7 @@ stages:
 
 ## Setup
 
-My idea of a set up involves preparation of any files that would be needed to build the site. Currently, I only have building of the theme for this stage which would be just a single job.
+My idea of a set up involves preparation of any files that would be needed to build the site. Currently, I only have building of the theme (since I've customized the theme) for this stage which would be just a single job.
 
 The theme `even` uses `yarn` and `webpack` from the project's scripts to build the assets --- minified and updates a `json` file that points to the latest assets.
 
@@ -121,7 +121,7 @@ So far, these are the only steps involved when building the site. This is automa
 
 {{< figure src="/images/pipelines.png" title="Pipelines" >}}
 
-I've found this workflow very convenient for me. Netlify also supports [CD](https://www.netlify.com/docs/continuous-deployment/) although I find Gitlab Pipelines more customizable if I would ever need additional steps during deployment.
+I've found this workflow very convenient for me. Netlify also supports [CD](https://www.netlify.com/docs/continuous-deployment/) although I find Gitlab Pipelines more flexible if I would ever need additional steps during deployment.
 
 #### Resources:
 
