@@ -67,7 +67,7 @@ The `cache` key allows speeding up the build process by preserving vendor packag
 
 ## Build
 
-The `build` stage is quite simple which involves a single job as well --- building the static files. The command `hugo` with no parameters does this job.
+The `build` stage is quite simple which involves a single job as well --- building the actual site. The command `hugo` with no parameters does this job.
 
 The only considerations I had were using the extended version of `hugo` (in order to use SASS/SCSS with [Hugo Pipes](https://gohugo.io/hugo-pipes/)) and again, passing the artifact over to the next stage. I've also added the `setup` stage as a dependency.
 
