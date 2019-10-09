@@ -26,7 +26,7 @@ $ pacman -Sy virtualbox linux-headers virtualbox-host-dkms
 
 Before any Virtualbox configuration, in my BIOS, I needed to first enable "SVM mode". I am using [GA-AB350-Gaming 3][4] and this setting is located under **Advanced Frequency Settings** > **Advanced CPU Core Settings** > **SVM Mode**.
 
-![GA-AB350-Gaming 3](http://static.gigabyte.com/Product/2/6166/2017021011363642_m.png)
+{{< figure src="/images/gigabyte.png" title="GA-AB350-Gaming 3" >}}
 
 I've then enabled modules needed to get `docker-machine` working:
 
