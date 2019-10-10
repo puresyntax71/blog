@@ -5,6 +5,13 @@ keywords: []
 description: ""
 tags: ['hugo', 'gitlab', 'netlify']
 categories: []
+resources:
+    - title: Deploying a Vue.js app to Netlify using GitLab’s CI/CD pipeline
+      url: https://medium.com/js-dojo/deploying-vue-js-to-netlify-using-gitlab-continuous-integration-pipeline-1529a2bbf170#405c
+    - title: GitLab CI/CD Pipeline Configuration Reference
+      url: https://docs.gitlab.com/ee/ci/yaml/
+    - title: Hugo Gitlab Pages
+      url: https://gitlab.com/pages/hugo
 ---
 
 The current blog uses [Hugo](https://gohugo.io) as the static site generator with a forked theme of [Even](https://github.com/olOwOlo/hugo-theme-even). I've managed to use [Gitlab Pipelines](https://docs.gitlab.com/ee/ci/pipelines.html) to deploy the site to [Netlify](https://www.netlify.com).
@@ -122,9 +129,3 @@ So far, these are the only steps involved when building the site. This is automa
 {{< figure src="/images/pipelines.png" title="Pipelines" >}}
 
 I've found this workflow very convenient for me. Netlify also supports [CD](https://www.netlify.com/docs/continuous-deployment/) although I find Gitlab Pipelines more flexible if I would ever need additional steps during deployment.
-
-#### Resources:
-
-* [Deploying a Vue.js app to Netlify using GitLab’s CI/CD pipeline](https://medium.com/js-dojo/deploying-vue-js-to-netlify-using-gitlab-continuous-integration-pipeline-1529a2bbf170#405c)
-* [GitLab CI/CD Pipeline Configuration Reference](https://docs.gitlab.com/ee/ci/yaml/)
-* [Hugo Gitlab Pages](https://gitlab.com/pages/hugo)

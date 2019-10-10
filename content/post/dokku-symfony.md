@@ -5,6 +5,11 @@ keywords: []
 description: ""
 tags: ['symfony', 'dokku']
 categories: []
+resources:
+    - title: 'Deploying Symfony 4 Apps on Heroku'
+      url: https://devcenter.heroku.com/articles/deploying-symfony4
+    - title: 'Deploying to Heroku Cloud'
+      url: https://symfony.com/doc/3.4/deployment/heroku.html
 ---
 
 Been recently playing around with [Dokku](http://dokku.viewdocs.io/dokku/), a heroku-like, selfhosted PaaS solution for servers. I've wanted to test out deployment of Symfony 4 on Dokku. In order to do this, I tried deploying the [`demo`](https://github.com/symfony/demo) project from Symfony.
@@ -25,7 +30,8 @@ $ dokku mariadb:link symfony-demo symfony-demo
 
 > I have already installed the [`mariadb`](https://github.com/dokku/dokku-mariadb) plugin for dokku.
 
-> The `demo` project actually has `sqlite` has its database.
+<!-- -->
+> The `demo` project actually uses `sqlite` as its database.
 
 At this point, `dokku` sets the `DATABASE_URL` environment variable which is, by default, also used by Symfony/Doctrine.
 
@@ -35,7 +41,7 @@ I would also need to set the `APP_ENV` variable for Symfony to `prod` so that no
 $ dokku config:set symfony-demo APP_ENV=prod
 ```
 
-The `demo` project uses `nodejs` for building the frontend. `dokku` tries its best to determine which buildpacks to include during deployment i.e. whether it sees a `composer.json` or `package.json` file. In order to get this working, I needed 2 [buildpacks](http://dokku.viewdocs.io/dokku~v0.18.5/deployment/methods/buildpacks/):
+The `demo` project uses `nodejs` for building the frontend. `dokku` tries its best to determine what buildpack to use during deployment i.e. whether it sees a `composer.json` or `package.json` file. In order to get the project working, I needed 2 [buildpacks](http://dokku.viewdocs.io/dokku~v0.18.5/deployment/methods/buildpacks/):
 
 * Node.js
 * PHP
