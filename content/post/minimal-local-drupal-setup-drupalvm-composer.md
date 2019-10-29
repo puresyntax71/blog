@@ -8,11 +8,11 @@ categories: []
 resources: []
 ---
 
-One of the good things I really like about Drupal is its ecosystem. With a large community, you'll find that a lot of smart people were able to contribute integrations with Drupal. Amongst these is its tooling - from debugging to testing to local environments. Here I would show a minimal local drupal development setup.
+One of the good things I really like about Drupal is its ecosystem. With a large community, you'll find that a lot of smart people were able to contribute integrations with Drupal. Amongst these is its tooling --- from debugging to testing to local environments. Here I would show a minimal local drupal development setup.
 
 When it comes to local environment, Drupal has a lot of options to choose from. You can have a really simple LAMP/LEMP setup or a VM. There is a [huge list](https://www.drupal.org/docs/develop/local-server-setup) which provides different forms of setup.
 
-I've opted for [Drupal VM](https://www.drupalvm.com/). It's been around for ages and is actively being maintained. It may not be as 'minimal' as it should considering it has support for a lot of services although I find it really clean to configure. By default, Drupal VM uses [Vagrant](https://www.vagrantup.com) and [Ansible](https://www.ansible.com) to create a local environment.
+I've opted for [Drupal VM](https://www.drupalvm.com/). It's been around for ages and is actively being maintained. It may not be as "minimal" as it should considering it has support for a lot of services although I find it really clean to configure. By default, Drupal VM uses [Vagrant](https://www.vagrantup.com) and [Ansible](https://www.ansible.com) to create a local environment.
 
 There are [different ways](http://docs.drupalvm.com/en/latest/) to use Drupal VM with Drupal and I've found including it as a [dependency in composer](http://docs.drupalvm.com/en/latest/deployment/composer-dependency/) much cleaner and flexible.
 
@@ -51,6 +51,13 @@ Once Vagrant/Drupal VM has finished provisioning I would have the following serv
 
 * Adminer
 * XHProf
-* Dashboard - simple dashboard by Drupal VM to manage websites
+* Dashboard - simple dashboard by Drupal VM to manage websites.
 * Pimp my log
 * Drupal - the actual site.
+
+I find Drupal VM a really good approach when it comes to local environment. I've also tried a few others such as [Lando](https://docs.lando.dev/config/drupal8.html) and [Docksal](https://docksal.io/). As far as I can remember, they were also ood start with local environments. They use `docker` to set up the local environment.
+
+Other local environment setups that I find interesting are:
+
+* [Valet](https://laravel.com/docs/6.x/valet) - designed for [Laravel](https://laravel.com) but there is a [blog post](https://www.webfoobar.com/node/102) which documents on how to make it work with Drupal.
+* [Symfony Local Web Server](https://symfony.com/doc/current/setup/symfony_server.html) - this one I really like but I haven't gotten around to trying it with Drupal.

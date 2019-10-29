@@ -25,9 +25,9 @@ variables:
     GIT_SUBMODULE_STRATEGY: recursive
 ```
 
-The default stage is `test` althought I've defined 3 stages for the deployment:
+The default stage is `test` although I've defined 3 stages for the deployment:
 
-1. **Setup**: Sets up the theme `even` --- installing the necessary `npm` modules using `yarn` and building the theme.
+1. **Setup**: Sets up the theme `even` --- installing the necessary `npm` packages using `yarn` and building the theme.
 2. **Build**: Builds the actual hugo website with the output directory set to the default (`public`).
 3. **Deploy**: Deploys the site to Netlify.
 
