@@ -55,7 +55,7 @@ Once Vagrant/Drupal VM has finished provisioning I would have the following serv
 * Pimp my log
 * Drupal - the actual site.
 
-I find Drupal VM a really good approach when it comes to local environment. I've also tried a few others such as [Lando](https://docs.lando.dev/config/drupal8.html) and [Docksal](https://docksal.io/). As far as I can remember, they were also ood start with local environments. They use `docker` to set up the local environment.
+I find Drupal VM a really good approach when it comes to local environment. I've also tried a few others such as [Lando](https://docs.lando.dev/config/drupal8.html) and [Docksal](https://docksal.io/). As far as I can remember, they were also good start with local environments. They use `docker` to set up the local environment.
 
 Other local environment setups that I find interesting are:
 
