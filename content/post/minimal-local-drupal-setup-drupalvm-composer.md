@@ -5,7 +5,11 @@ keywords: []
 description: ""
 tags: ['drupal', 'development', 'tools']
 categories: []
-resources: []
+resources:
+    - title: Drupal VM as a Composer Dependency
+      url: http://docs.drupalvm.com/en/latest/deployment/composer-dependency/
+    - title: Using Composer to Install Drupal and Manage Dependencies
+      url: https://www.drupal.org/docs/develop/using-composer/using-composer-to-install-drupal-and-manage-dependencies
 ---
 
 One of the good things I really like about Drupal is its ecosystem. With a large community, you'll find that a lot of smart people were able to contribute integrations with Drupal. Amongst these is its tooling --- from debugging to testing to local environments. Here I would show a minimal local drupal development setup.
@@ -45,6 +49,22 @@ drupal_core_path: "/var/www/drupalvm/web"
 
 What I did here is that I've specified Vagrant specific configurations, told Drupal VM not to do any of its automated installation, and set the document root of Drupal. The default configurations can be found [here](https://github.com/geerlingguy/drupal-vm/blob/master/default.config.yml).
 
+Final step is to have a `Vagrantfile`:
+
+```ruby
+# The absolute path to the root directory of the project. Both Drupal VM and
+# the config file need to be contained within this path.
+ENV['DRUPALVM_PROJECT_ROOT'] = "#{__dir__}"
+# The relative path from the project root to the config directory where you
+# placed your config.yml file.
+ENV['DRUPALVM_CONFIG_DIR'] = "config"
+# The relative path from the project root to the directory where Drupal VM is located.
+ENV['DRUPALVM_DIR'] = "vendor/geerlingguy/drupal-vm"
+
+# Load the real Vagrantfile
+load "#{__dir__}/#{ENV['DRUPALVM_DIR']}/Vagrantfile"
+```
+
 After getting this set up, all I needed to do was `vagrant up` and left Drupal VM to it. I already have Vagrant plugin `vagrant-hostsupdater` installed locally - Drupal VM uses this to update the hosts file to point "my_drupal.local" to the configured IP (192.168.88.88).
 
 Once Vagrant/Drupal VM has finished provisioning I would have the following services for my local environment:
@@ -55,7 +75,7 @@ Once Vagrant/Drupal VM has finished provisioning I would have the following serv
 * Pimp my log
 * Drupal - the actual site.
 
-I find Drupal VM a really good approach when it comes to local environment. I've also tried a few others such as [Lando](https://docs.lando.dev/config/drupal8.html) and [Docksal](https://docksal.io/). As far as I can remember, they were also good start with local environments. They use `docker` to set up the local environment.
+I find Drupal VM a really good approach when it comes to local environment. I've also tried a few others such as [Lando](https://docs.lando.dev/config/drupal8.html) and [Docksal](https://docksal.io/). As far as I can remember, they were also good starts with local environments. They use `docker` to set up the local environment.
 
 Other local environment setups that I find interesting are:
 
