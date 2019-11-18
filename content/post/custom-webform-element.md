@@ -22,7 +22,7 @@ The version for Drupal 8 makes use of Drupal's powerful [plugin system](https://
 
 Recently I've been given a task to include additional data to the exporters (specifically CSV). There might be multiple ways to achieve this (e.g. creating an exporter) though I think creating an element and adding it to the existing webform seem to be a better way of handling this.
 
-When it comes to developing a custom element, there is a need to develop a new `[FormElement](https://api.drupal.org/api/drupal/core%21lib%21Drupal%21Core%21Render%21Element%21FormElement.php/class/FormElement/8.2.x)` and implement a new `WebformElement` plugin. Although since all I need is to add data to the exporter, I can just create a new `WebformElement` and implement a method that handles the data export.
+When it comes to developing a custom element, there is a need to develop a new [`FormElement`](https://api.drupal.org/api/drupal/core%21lib%21Drupal%21Core%21Render%21Element%21FormElement.php/class/FormElement/8.2.x) and implement a new `WebformElement` plugin. Although since all I need is to add data to the exporter, I can just create a new `WebformElement` and implement a method that handles the data export.
 
 For this simple example, I would simply create a new webform element that uses the `value` form element that stores an Article entity ID and grab specific fields. My webform has an entityreference webform element which stores the actual Article entity ID.
 
@@ -141,4 +141,4 @@ I've only included the fields "Title", "URL", and "Tags". CSV result export woul
 
 {{< figure src="/images/export.png" title="Export" >}}
 
-I think the current development experience for webform is really good. I do think there seem to be a lot of magic happening behind which would require some digging in the source. The module `[webform_example_element](https://git.drupalcode.org/project/webform/tree/8.x-5.5/modules/webform_example_element)` is a good place to start when it comes to developing a custom element.
+I think the current development experience for webform is really good. I do think there seem to be a lot of magic happening behind which would require some digging in the source. The module [`webform_example_element`](https://git.drupalcode.org/project/webform/tree/8.x-5.5/modules/webform_example_element) is a good place to start when it comes to developing a custom element.
