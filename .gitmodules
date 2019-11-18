@@ -1,3 +1,6 @@
 [submodule "themes/even"]
 	path = themes/even
 	url = https://gitlab.com/virtualcursor/even.git
+[submodule "themes/hugo-theme-cleanwhite"]
+	path = themes/hugo-theme-cleanwhite
+	url = https://github.com/zhaohuabing/hugo-theme-cleanwhite.git
