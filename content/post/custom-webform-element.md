@@ -141,4 +141,6 @@ I've only included the fields "Title", "URL", and "Tags". CSV result export woul
 
 {{< figure src="/images/export.png" title="Export" >}}
 
+I'm missing a lot such as checking for existing and empty fields and making it more flexible although this works for a simple example.
+
 I think the current development experience for webform is really good. I do think there seem to be a lot of magic happening behind which would require some digging in the source. The module [`webform_example_element`](https://git.drupalcode.org/project/webform/tree/8.x-5.5/modules/webform_example_element) is a good place to start when it comes to developing a custom element.
