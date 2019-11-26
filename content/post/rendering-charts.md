@@ -35,7 +35,7 @@ I originally added a paragraph field to the "Fund" content type although since t
 
 ## Chart Pseudo-field
 
-The next item on the list is to allow administrators to display the chart on the "Fund" content type. In order to achieve this, I created a [pseudo-field](https://www.webomelette.com/creating-pseudo-fields-drupal-8) specific for the "Fund" content type. This way, the field can be displayed anywhere on the layout ("Layout Builder" supports this as well). Other options I think can be to create a custom [Field Formatter](https://www.drupal.org/docs/8/creating-custom-modules/creating-custom-field-types-widgets-and-formatters/create-a-custom-0) which would be a more administrator-friendly approach.
+The next item on the list is to allow administrators to display the chart on the "Fund" content type. In order to achieve this, I created a [pseudo-field](https://www.webomelette.com/creating-pseudo-fields-drupal-8) specific for the "Fund" content type. This way, the field can be displayed anywhere on the layout ("Layout Builder" supports this as well). Another option I can of is to create a custom [Field Formatter](https://www.drupal.org/docs/8/creating-custom-modules/creating-custom-field-types-widgets-and-formatters/create-a-custom-0) which would be a more administrator-friendly approach.
 
 ### Implementing `hook_entity_extra_field_info()`
 
@@ -50,9 +50,9 @@ function custom_module_entity_extra_field_info() {
   $extra = [];
 
   $extra['node']['fund']['display']['chart'] = [
-      'label' => t('Chart'),
-      'description' => t('Chart for asset values.'),
-      'weight' => 0,
+    'label' => t('Chart'),
+    'description' => t('Chart for asset values.'),
+    'weight' => 0,
   ];
 
   return $extra;
@@ -241,7 +241,7 @@ The example chart looks like this:
 
 {{< figure src="/images/example-chart.png" title="Chart" >}}
 
-Most of the configurations are found on the [documentation](https://c3js.org/reference.html). The chart is not as configurable from the UI considering the chart will not change much and configuration is usually out of the scope of the task.
+Most of the configurations are found on the [documentation](https://c3js.org/reference.html). The chart is not as configurable from the UI considering the chart will not change much and configuration is usually out of the scope of the task. One of the difficulties I had was to make the chart responsive. I had to do a bit of digging to actually get it to work. The trouble I had was that it was conflicting with some of the JS libraries I was using for the project.
 
 There were some additional customizations for the actual project such as multiple charts, tooltips, filters, and link export (handled by `views_data_export`) although this example shows the basics.
 
