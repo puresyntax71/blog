@@ -64,7 +64,7 @@ home = ["HTML", "RSS", "Algolia"]
 
   # Highlight.js theme
   # demo: https://highlightjs.org/static/demo/
-  highlightjs = "docco"
+  highlightjs = "googlecode"
 
   [params.social]
   rss            = true 
