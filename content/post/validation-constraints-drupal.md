@@ -1,8 +1,9 @@
 ---
 title: "Validation Constraints in Drupal"
 date: 2017-12-17T00:10:59+08:00
-tags: ['api', 'validation']
-categories: ['drupal']
+tags: ['api', 'validation', 'drupal']
+categories: ['development']
+showtoc: false
 ---
 
 Validation constraints allow a lower level of validation for entities. Unlike in Drupal 7, validation usually comes from form validation handlers. This would also mean that in order to validate entity related operations outside of forms, a developer would need to write those validations. An example is with the [services][1] module which tries to catch errors before making changes to entities. In Drupal 8, validation can now come from the Entity Validation API which can be called anytime when an operation for an entity is made.  

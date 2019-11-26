@@ -3,8 +3,9 @@ title: "Custom Webform Element in Drupal"
 date: 2019-11-15T01:38:43+08:00
 keywords: []
 description: ""
-tags: ['drupal', 'development', 'webform']
-categories: []
+tags: ['drupal', 'webform']
+categories: ['development']
+showtoc: false
 resources:
     - title: Document how to add a custom WebformElement
       url: https://www.drupal.org/project/webform/issues/2877862

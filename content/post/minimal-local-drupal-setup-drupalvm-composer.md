@@ -4,7 +4,8 @@ date: 2019-10-25T16:20:58+08:00
 keywords: []
 description: ""
 tags: ['drupal', 'development', 'tools']
-categories: []
+categories: ['development']
+showtoc: false
 resources:
     - title: Drupal VM as a Composer Dependency
       url: http://docs.drupalvm.com/en/latest/deployment/composer-dependency/

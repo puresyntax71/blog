@@ -2,6 +2,8 @@
 date = "2017-09-17T00:28:51+08:00"
 tags = ["archlinux","tools"]
 title = "Docker in Arch Linux"
+categories = ["development"]
+showtoc = false
 +++
 
 [Docker][1] has been a necessary tool for me when it comes to development. I've used to use [Vagrant][2] but have then switched to Docker.

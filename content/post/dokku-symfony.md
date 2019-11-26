@@ -4,7 +4,8 @@ date: 2019-10-08T17:46:10+08:00
 keywords: []
 description: ""
 tags: ['symfony', 'dokku']
-categories: []
+categories: ['development']
+showtoc: false
 resources:
     - title: 'Deploying Symfony 4 Apps on Heroku'
       url: https://devcenter.heroku.com/articles/deploying-symfony4

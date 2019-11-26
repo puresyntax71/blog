@@ -1,8 +1,9 @@
 ---
-categories: ['jekyll']
+categories: ['development']
 date: 2015-12-18T00:00:00Z
 title: Moving to Jekyll
-tags: []
+tags: ['jekyll', 'blog']
+showtoc: false
 ---
 
 Finally moved back to jekyll. Nothing fancy here though. This is hosted again in Github Pages.
