@@ -10,7 +10,7 @@
 
 .post-preview > .post-meta {
     font-style: normal;
-    font-family: inherit;
+    font-family: 'Lora', serif;
     font-size: unset;
     font-weight: bold;
     margin-bottom: 10px;
@@ -42,4 +42,22 @@ p {
 
 blockquote {
     font-style: normal;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5 .h5, h6 .h6 {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.intro-header .post-heading .meta {
+    font-family: Lora, serif;
+    font-style: normal;
+}
+
+code, pre, kbd, samp {
+    font-family: 'Inconsolata', monospace;
+    font-size: 100%;
 }
