@@ -15,8 +15,6 @@ build:
             - public/
     only:
         - master
-    dependencies:
-        - setup
 
 deploy:
     image: node:latest
