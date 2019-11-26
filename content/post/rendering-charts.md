@@ -19,11 +19,11 @@ In order to accomplish this feature, the items I planned on doing were:
 
 > Since this is an example, the listed items are not complete/partially correct although they are somewhat similar.
 
-## Fund
+## Fund Content Type
 
 The only field necessary for the "Fund" content type would just be the title. I simply created a new content type with some sane defaults and named it "Fund".
 
-## Asset Value
+## Asset Value Content Type
 
 For the "Asset Value" content type, I added three fields:
 
@@ -47,15 +47,15 @@ The field needs to be declared first so that Drupal can find it:
  * Implements hook_entity_extra_field_info().
  */
 function custom_module_entity_extra_field_info() {
-    $extra = [];
+  $extra = [];
 
-    $extra['node']['fund']['display']['chart'] = [
-        'label' => t('Chart'),
-        'description' => t('Chart for asset values.'),
-        'weight' => 0,
-    ];
+  $extra['node']['fund']['display']['chart'] = [
+      'label' => t('Chart'),
+      'description' => t('Chart for asset values.'),
+      'weight' => 0,
+  ];
 
-    return $extra;
+  return $extra;
 }
 ...
 ```
@@ -78,55 +78,55 @@ use Drupal\Core\Entity\EntityInterface;
  * Implements hook_ENTITY_TYPE_view().
  */
 function custom_module_node_view(&$build, EntityInterface $entity, EntityViewDisplayInterface $display, $view_mode) {
-    if ($display->getComponent('chart')) {
-        $storage = \Drupal::entityTypeManager()->getStorage('node');
+  if ($display->getComponent('chart')) {
+    $storage = \Drupal::entityTypeManager()->getStorage('node');
 
-        $query = $storage->getQuery()
-                         ->condition('type', 'asset_value')
-                         ->condition('field_fund.target_id', $fund->id())
-                         ->sort('field_date');
+    $query = $storage->getQuery()
+                     ->condition('type', 'asset_value')
+                     ->condition('field_fund.target_id', $fund->id())
+                     ->sort('field_date');
 
-        if (!empty($result)) {
-            $values = $storage->loadMultiple($result);
+    if (!empty($result)) {
+      $values = $storage->loadMultiple($result);
 
-            $data = [t('Date'), t('Value')];
+      $data = [t('Date'), t('Value')];
 
-            foreach ($values as $value) {
-                $data[0][] = $value->get('field_date')->date->format('Y-m-d');
-                $data[1][] = $value->get('field_value')->value;
-            }
+      foreach ($values as $value) {
+          $data[0][] = $value->get('field_date')->date->format('Y-m-d');
+          $data[1][] = $value->get('field_value')->value;
+      }
 
-            $build['chart'] = [
-                '#type' => 'container',
-                '#attributes' => [
-                    'id' => 'chart-' . $entity->id() . '-wrapper',
-                    'class' => ['chart-wrapper'],
-                ],
-                '#attached' => [
-                    'drupalSettings' => ['customModule' => ['chart' => ['chart-' . $entity->id() => $data]]]
-                ],
-                'chart' => [
-                    '#type' => 'html_tag',
-                    '#tag' => 'div',
-                    '#attributes' => [
-                        'id' => 'chart-' . $entity->id(),
-                        'class' => ['chart'],
-                    ],
-                ],
-            ];
-        }
+      $build['chart'] = [
+        '#type' => 'container',
+        '#attributes' => [
+          'id' => 'chart-' . $entity->id() . '-wrapper',
+          'class' => ['chart-wrapper'],
+        ],
+        '#attached' => [
+          'drupalSettings' => ['customModule' => ['chart' => ['chart-' . $entity->id() => $data]]]
+        ],
+        'chart' => [
+          '#type' => 'html_tag',
+          '#tag' => 'div',
+          '#attributes' => [
+              'id' => 'chart-' . $entity->id(),
+            'class' => ['chart'],
+          ],
+        ],
+      ];
     }
+  }
 }
 ...
 ```
 
-So far, the code just displays a simple container with the necessary "Asset Value" data belonging to the "Fund" content. The data is passed to `drupalSettings` so that the chart library will be able use it. The data was specifically formatted for the chart library that will be used later on.
+So far, the code just displays a simple container with the necessary "Asset Value" data belonging to the "Fund" content. The data is passed to `drupalSettings` so that the chart library will be able to use it. The data was specifically formatted for the chart library that will be used later on.
 
 ## Chart
 
 The requirement was to use [d3js](https://d3js.org/) to render the chart since the prototype based on it for the designs. I found d3js to be a bit complex though and seemed to have a steep learning curve considering the timeline. Luckily, I was able to find a "wrapper" which was easy to use but still uses d3js behind it --- [c3js](https://c3js.org/).
 
-Drupal also happened to have a module for easy creating of charts --- [charts](https://www.drupal.org/project/charts). It also happen to have support for c3js. I did give it a try but I found that it offered too much features which makes it a bit difficult to customize for my needs. I find it really well written although I might need to do some digging in order to accomplish the needed requirement.
+Drupal also happened to have a module for easy creating of charts --- [charts](https://www.drupal.org/project/charts). It also happen to have support for `c3js`. I did give it a try but I found that it offered too much features which makes it a bit difficult to customize for my needs. I find it really well written although I might need to do some digging in order to accomplish the needed requirement.
 
 > The project's requirement isn't actually to only display a chart but it also had other features mainly filtering of data by dates.
 
@@ -136,111 +136,111 @@ First step needed was to include the library:
 
 ```yaml
 d3:
-    version: 5.9.7
-    js:
-        https://cdn.jsdelivr.net/npm/d3@5.9.7/dist/d3.min.js: { type: external, minified: true }
+  version: 5.9.7
+  js:
+    https://cdn.jsdelivr.net/npm/d3@5.9.7/dist/d3.min.js: { type: external, minified: true }
 
 c3:
-    version: 0.7.3
-    css:
-        theme:
-            https://cdn.jsdelivr.net/npm/c3@0.7.3/c3.min.css: { type: external, minified: true }
-    js:
-        https://cdn.jsdelivr.net/npm/c3@0.7.3/c3.min.js: { type: external, minified: true }
-    dependencies:
-        - custom_module/d3
+  version: 0.7.3
+  css:
+    theme:
+      https://cdn.jsdelivr.net/npm/c3@0.7.3/c3.min.css: { type: external, minified: true }
+  js:
+    https://cdn.jsdelivr.net/npm/c3@0.7.3/c3.min.js: { type: external, minified: true }
+  dependencies:
+    - custom_module/d3
 
 custom-module:
-    version: 1.0
-    js:
-        js/main.js: {}
-    dependencies:
-        - custom_module/c3
-        - core/drupalSettings
-        - core/jquery.once
-        - core/drupal
-        - core/jquery
+  version: 1.0
+  js:
+    js/main.js: {}
+  dependencies:
+    - custom_module/c3
+    - core/drupalSettings
+    - core/jquery.once
+    - core/drupal
+    - core/jquery
 ```
 
-I've included the d3js, c3js, and other basic, built-in libraries for the main javascript for the custom module which would be `custom_module/js/main.js`.
+I've included the `d3js`, `c3js`, and other basic, built-in libraries for the main javascript for the custom module which would be `custom_module/js/main.js`.
 
 After declaring the library, I've attached it to the component added earlier:
 
 ```php
 ...
 '#attached' => [
-    'library' => ['custom_module/custom-module'],
-    'drupalSettings' => ['customModule' => ['chart' => ['chart-' . $entity->id() => $data]]]
+  'library' => ['custom_module/custom-module'],
+  'drupalSettings' => ['customModule' => ['chart' => ['chart-' . $entity->id() => $data]]]
 ],
 ...
 ```
 
 ### Rendering the Chart
 
-After having all the necessary items, I can now display the chart with c3js:
+After having all the necessary items, I can now display the chart with `c3js`:
 
 ```javascript
 (function ($, Drupal, drupalSettings) {
-    Drupal.behaviors.daiwaComponents = {
-        attach: function attach(context, settings) {
-            $('.chart-wrapper', context).once('customModuleDisplayChart').each(function() {
-                var id = $('.chart', this).attr('id');
-                var data = settings.customModule.chart[id];
+  Drupal.behaviors.daiwaComponents = {
+    attach: function attach(context, settings) {
+      $('.chart-wrapper', context).once('customModuleDisplayChart').each(function() {
+        var id = $('.chart', this).attr('id');
+        var data = settings.customModule.chart[id];
 
-                var chart = c3.generate({
-                    bindto: '#' + id,
-                    size: {
-                        width: 930,
-                    },
-                    padding: {
-                        right: 28,
-                    },
-                    data: {
-                        x: 'date',
-                        columns: data,
-                        empty: {
-                            label: {
-                                text: 'No data',
-                            }
-                        }
-                    },
-                    axis: {
-                        x: {
-                            type: 'timeseries',
-                            tick: {
-                                format: '%d/%m/%Y',
-                                count: 6,
-                            },
-                        },
-                    },
-                    legend: {
-                        item: {
-                            padding: 10,
-                            tile: {
-                                width: 30,
-                                height: 2,
-                            },
-                        },
-                    },
-                    color: {
-                        pattern: ['#ffaf2f'],
-                    },
-                    grid: {
-                        y: {
-                            show: true,
-                        }
-                    },
-                    point: {
-                        r: 0,
-                        focus: {
-                            expand: {
-                                r: 8,
-                            }
-                        }
-                    },
-                });
-            });
-        }
-    };
+        var chart = c3.generate({
+          bindto: '#' + id,
+          size: { width: 930 },
+          data: {
+            x: 'date',
+            columns: data,
+            empty: {
+              label: {
+                text: 'No data',
+              }
+            }
+          },
+          axis: {
+            x: {
+              type: 'timeseries',
+              tick: {
+                format: '%d/%m/%Y',
+                count: 6,
+              },
+            },
+          },
+          legend: {
+            item: {
+              padding: 10,
+              tile: {
+                width: 30,
+                height: 2,
+              },
+            },
+          },
+          grid: {
+            y: {
+              show: true,
+            }
+          },
+          point: {
+            r: 0,
+            focus: {
+              expand: {
+                r: 8,
+              }
+            }
+          },
+        });
+      });
+    }
+  };
 })(jQuery, Drupal, drupalSettings);
 ```
+
+The example chart looks like this:
+
+{{< figure src="/images/example-chart.png" title="Chart" >}}
+
+There were some additional customizations for the actual project such as multiple charts, tooltips, filters, and link export (handled by `views_data_export`) although this example shows the basics.
+
+All in all, I think the experience creating this feature was fun. I definitely learned a lot about `c3js`. I find its usage somewhat similar to [Highcharts](https://www.highcharts.com/) and [Chart.js](https://www.chartjs.org/).
