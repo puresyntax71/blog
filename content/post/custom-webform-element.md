@@ -6,6 +6,7 @@ description: ""
 tags: ['drupal', 'webform']
 categories: ['development']
 showtoc: false
+image: "images/forms.png"
 resources:
     - title: Document how to add a custom WebformElement
       url: https://www.drupal.org/project/webform/issues/2877862
@@ -73,15 +74,13 @@ Since this would just use the `value` form element, I can implement the `prepare
 
 ```php
 ...
-
-    /**
-     * {@inheritdoc}
-     */
-    public function prepare(array &$element, WebformSubmissionInterface $webform_submission = NULL) {
-        $element['#type'] = 'value';
-        parent::prepare($element, $webform_submission);
-    }
-
+/**
+ * {@inheritdoc}
+ */
+public function prepare(array &$element, WebformSubmissionInterface $webform_submission = NULL) {
+    $element['#type'] = 'value';
+    parent::prepare($element, $webform_submission);
+}
 ...
 ```
 
@@ -89,13 +88,13 @@ I then implemented `preSave()` method in order to give it some value upon saving
 
 ```php
 ...
-    /**
-     * {@inheritdoc}
-     */
-    public function preSave(array &$element, WebformSubmissionInterface $webform_submission) {
-        $source_data = $webform_submission->getElementData('article');
-        $webform_submission->setElementData('article_1', $source_data);
-    }
+/**
+ * {@inheritdoc}
+ */
+public function preSave(array &$element, WebformSubmissionInterface $webform_submission) {
+    $source_data = $webform_submission->getElementData('article');
+    $webform_submission->setElementData('article_1', $source_data);
+}
 ...
 ```
 
@@ -104,38 +103,40 @@ In this method, I've grabbed the value from the element `article` which is the k
 And finally, I just implement the methods `buildExportHeader()` and `buildExportRecord()`.
 
 ```php
-    /**
-     * {@inheritdoc}
-     */
-    public function buildExportHeader(array $element, array $options) {
+...
+/**
+ * {@inheritdoc}
+ */
+public function buildExportHeader(array $element, array $options) {
+    return [
+        $this->t('Title'),
+        $this->t('URL'),
+        $this->t('Tags'),
+    ];
+}
+
+/**
+ * {@inheritdoc}
+ */
+public function buildExportRecord(array $element, WebformSubmissionInterface $webform_submission, array $export_options) {
+    $entity_id = $this->getValue($element, $webform_submission);
+
+    if ($entity_id && ($entity = $this->entityTypeManager->getStorage('node')->load($entity_id))) {
+        $tags = [];
+        foreach ($entity->field_tags as $name) {
+            $tags[] = $name->entity->label();
+        }
+
         return [
-            $this->t('Title'),
-            $this->t('URL'),
-            $this->t('Tags'),
+            $entity->label(),
+            $entity->toUrl('canonical', ['absolute' => TRUE])->toString(),
+            implode(', ', $tags),
         ];
     }
 
-    /**
-     * {@inheritdoc}
-     */
-    public function buildExportRecord(array $element, WebformSubmissionInterface $webform_submission, array $export_options) {
-        $entity_id = $this->getValue($element, $webform_submission);
-
-        if ($entity_id && ($entity = $this->entityTypeManager->getStorage('node')->load($entity_id))) {
-            $tags = [];
-            foreach ($entity->field_tags as $name) {
-                $tags[] = $name->entity->label();
-            }
-
-            return [
-                $entity->label(),
-                $entity->toUrl('canonical', ['absolute' => TRUE])->toString(),
-                implode(', ', $tags),
-            ];
-        }
-
-        return parent::buildExportRecord($element, $webform_submission, $export_options);
-    }
+    return parent::buildExportRecord($element, $webform_submission, $export_options);
+}
+...
 ```
 
 I've only included the fields "Title", "URL", and "Tags". CSV result export would then look like this:
