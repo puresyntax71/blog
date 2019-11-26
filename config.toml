@@ -14,7 +14,7 @@ home = ["HTML", "RSS", "Algolia"]
 
 [params]
   header_image = "images/home-header.png"
-  SEOTitle = "Strict Panda"
+  SEOTitle = "Tech blog and Portfolio"
   description = "Random thoughts and ramblings."
   keyword = ""
   slogan = ""
@@ -36,7 +36,7 @@ home = ["HTML", "RSS", "Algolia"]
   # Sidebar settings
   sidebar_about_description = "Developer, developer, developer."
   #sidebar_avatar = "img/avatar-zhaohuabing.jpg"      # use absolute URL, seeing it's used in both `/` and `/about/`
-  sidebar_avatar = "images/nerd.png"      # use absolute URL, seeing it's used in both `/` and `/about/`
+  sidebar_avatar = "images/about.png"      # use absolute URL, seeing it's used in both `/` and `/about/`
 
   featured_tags = true 
   featured_condition_size = 1 
@@ -59,6 +59,7 @@ home = ["HTML", "RSS", "Algolia"]
 
   # Include any custom CSS and/or JS files, url or relative to /static folder
   #custom_css = ["css/lightbox.css", "https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css", "css/main.css"]
+  custom_css = ["css/main.css"]
   #custom_js = ["js/lightbox.js", "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js", "js/main.js"]
 
   # Highlight.js theme

@@ -1,0 +1,32 @@
+.post-preview > a > .post-title {
+    font-size: 24px;
+}
+
+@media only screen and (min-width: 768px) {
+    .post-preview > a > .post-title {
+        font-size: 26px;
+    }
+}
+
+.post-preview > .post-meta {
+    font-style: normal;
+    font-family: inherit;
+    font-size: unset;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.post-content-preview {
+    font-style: normal;
+    color: #404040;
+    font-size: inherit;
+}
+
+.post-content-preview:hover {
+    color: unset;
+}
+
+.short-about img {
+    margin-left: auto;
+    margin-right: auto;
+}
