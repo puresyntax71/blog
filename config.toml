@@ -61,6 +61,9 @@ home = ["HTML", "RSS", "Algolia"]
   #custom_css = ["css/lightbox.css", "https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css", "css/main.css"]
   custom_css = ["css/main.css"]
   #custom_js = ["js/lightbox.js", "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js", "js/main.js"]
+  custom_js = [
+    "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/languages/yaml.min.js"
+  ]
 
   # Highlight.js theme
   # demo: https://highlightjs.org/static/demo/

@@ -39,3 +39,7 @@ p {
 .post-container ul, .post-container ol {
     margin-bottom: 30px;
 }
+
+blockquote {
+    font-style: normal;
+}
