@@ -1,14 +1,14 @@
 ---
-title:       "Rendering Charts in Drupal using c3js"
+title:       "Rendering Charts in Drupal using C3.js"
 subtitle:    ""
 description: ""
 date:        2019-11-26T16:07:55+08:00
 image:       "images/charts.png"
 categories:  ["Development"]
-tags:        ["drupal", "c3js", "api"]
+tags:        ["drupal", "c3.js", "api"]
 ---
 
-One of the projects I've worked on before needed a chart that displays asset values for funds. The requirement was to allow editors to modify imported data and display it as a simple line chart in a content page using [d3js](https://d3js.org/).
+One of the projects I've worked on before needed a chart that displays asset values for funds. The requirement was to allow editors to modify imported data and display it as a simple line chart in a content page using [D3.js](https://d3js.org/).
 
 In order to accomplish this feature, the items I planned on doing were:
 
@@ -124,9 +124,9 @@ So far, the code just displays a simple container with the necessary "Asset Valu
 
 ## Chart
 
-The requirement was to use [d3js](https://d3js.org/) to render the chart since the prototype based on it for the designs. I found d3js to be a bit complex though and seemed to have a steep learning curve considering the timeline. Luckily, I was able to find a "wrapper" which was easy to use but still uses d3js behind it --- [c3js](https://c3js.org/).
+The requirement was to use [D3.js](https://d3js.org/) to render the chart since the prototype based on it for the designs. I found D3.js to be a bit complex though and seemed to have a steep learning curve considering the timeline. Luckily, I was able to find a "wrapper" which was easy to use but still uses D3.js behind it --- [C3.js](https://c3js.org/).
 
-Drupal also happened to have a module for easy creating of charts --- [charts](https://www.drupal.org/project/charts). It also happen to have support for `c3js`. I did give it a try but I found that it offered too much features which makes it a bit difficult to customize for my needs. I find it really well written although I might need to do some digging in order to accomplish the needed requirement.
+Drupal also happened to have a module for easy creating of charts --- [charts](https://www.drupal.org/project/charts). It also happen to have support for C3.js. I did give it a try but I found that it offered too much features which makes it a bit difficult to customize for my needs. I find it really well written although I might need to do some digging in order to accomplish the needed requirement.
 
 > The project's requirement isn't actually to only display a chart but it also had other features mainly filtering of data by dates.
 
@@ -162,7 +162,7 @@ custom-module:
     - core/jquery
 ```
 
-I've included the `d3js`, `c3js`, and other basic, built-in libraries for the main javascript for the custom module which would be `custom_module/js/main.js`.
+I've included the D3.js, C3.js, and other basic, built-in libraries for the main javascript for the custom module which would be `custom_module/js/main.js`.
 
 After declaring the library, I've attached it to the component added earlier:
 
@@ -177,11 +177,11 @@ After declaring the library, I've attached it to the component added earlier:
 
 ### Rendering the Chart
 
-After having all the necessary items, I can now display the chart with `c3js`:
+After having all the necessary items, I can now display the chart with C3.js:
 
 ```javascript
 (function ($, Drupal, drupalSettings) {
-  Drupal.behaviors.daiwaComponents = {
+  Drupal.behaviors.customModule = {
     attach: function attach(context, settings) {
       $('.chart-wrapper', context).once('customModuleDisplayChart').each(function() {
         var id = $('.chart', this).attr('id');
@@ -241,6 +241,8 @@ The example chart looks like this:
 
 {{< figure src="/images/example-chart.png" title="Chart" >}}
 
+Most of the configurations are found on the [documentation](https://c3js.org/reference.html). The chart is not as configurable from the UI considering the chart will not change much and configuration is usually out of the scope of the task.
+
 There were some additional customizations for the actual project such as multiple charts, tooltips, filters, and link export (handled by `views_data_export`) although this example shows the basics.
 
-All in all, I think the experience creating this feature was fun. I definitely learned a lot about `c3js`. I find its usage somewhat similar to [Highcharts](https://www.highcharts.com/) and [Chart.js](https://www.chartjs.org/).
+All in all, I think the experience creating this feature was fun. I definitely learned a lot about C3.js. I find its usage somewhat similar to [Highcharts](https://www.highcharts.com/) and [Chart.js](https://www.chartjs.org/).
