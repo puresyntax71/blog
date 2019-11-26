@@ -14,7 +14,7 @@ home = ["HTML", "RSS", "Algolia"]
 
 [params]
   header_image = "images/home-header.png"
-  SEOTitle = "Tech blog and Portfolio"
+  SEOTitle = "Tech Blog and Portfolio"
   description = "Random thoughts and ramblings."
   keyword = ""
   slogan = ""
