@@ -31,3 +31,11 @@
     margin-left: auto;
     margin-right: auto;
 }
+
+p {
+    margin: 20px 0;
+}
+
+.post-container ul, .post-container ol {
+    margin-bottom: 30px;
+}
