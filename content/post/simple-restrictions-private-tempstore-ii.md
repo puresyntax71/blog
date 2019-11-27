@@ -121,3 +121,87 @@ This is the example login form:
 {{< figure src="/images/product-login.png" title="Product login" >}}
 
 What it does is set a value for `product_access_<nid>` to `TRUE` to signify that the visitor has successfully entered the correct password.
+
+### Login Button
+
+The login button is also another simple link button. I've created a pseudo-field to implement this:
+
+```php
+<?php
+
+/**
+ * @file
+ * Contains custom_module.module.
+ */
+
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
+use Drupal\Core\Link;
+use Drupal\Core\Url;
+
+/**
+ * Implements hook_entity_extra_field_info().
+ */
+function custom_module_entity_extra_field_info() {
+  $extra = [];
+
+  $extra['node']['product']['display']['product_access'] = [
+    'label' => t('Product access'),
+    'description' => t('The product login button.'),
+    'weight' => 0,
+  ];
+
+  return $extra;
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_view().
+ */
+function custom_module_node_view(&$build, EntityInterface $entity, EntityViewDisplayInterface $display, $view_mode) {
+  if ($display->getComponent('product_access')) {
+    $product_access = \Drupal::service('custom_module.product_access');
+
+    if (!$product_access->hasAccess($entity)) {
+      $build['product_access'] = Link::fromTextAndUrl(
+        t('Product login'),
+        Url::fromRoute('custom_module.product_login', ['node' => $entity->id()])
+      )->toRenderable();
+
+      $build['product_access']['#cache']['max-age'] = 0;
+    }
+  }
+}
+```
+
+The content page would now look like this:
+
+{{< figure src="/images/content-product-login.png" title="Content product login" >}}
+
+## Toggling the Elements
+
+Now that everything is in place, I can hide or show the paragraph entities depending the access:
+
+```php
+...
+/**
+ * Implements hook_ENTITY_TYPE_view().
+ */
+function custom_module_paragraph_view(&$build, EntityInterface $entity, EntityViewDisplayInterface $display, $view_mode) {
+  if ($node = \Drupal::routeMatch()->getParameter('node')) {
+    $build['#cache']['max-age'] = 0;
+    \Drupal::service('page_cache_kill_switch')->trigger();
+
+    $node = $entity->getParentEntity();
+    $product_access = \Drupal::service('custom_module.product_access');
+
+    if (!$product_access->hasAccess($node)) {
+      $build['#printed'] = TRUE;
+    }
+  }
+}
+...
+```
+
+I've always assumed that in order to toggle visibility of renderable arrays, I can make use of the `#access` property but it looks like for paragraph entities I needed [`#printed`](https://drupal.stackexchange.com/questions/248425/suitable-way-to-hide-a-paragraph-entity) instead. It works fine but I don't exactly know why.
+
+This is a rough example and the actual implementation could actually use some improvements. I've disabled caching for most parts which isn't really recommended but it does seem to work for my use case.
