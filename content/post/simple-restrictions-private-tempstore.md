@@ -133,7 +133,7 @@ class ProductAccess implements ProductAccessInterface {
 
 For this example, I've used the "parameters" to declare the field name to be used for checking. I think a better approach would be to store it as a configuration for the module.
 
-> Unfortunately, the expiration of the value could not be set. It grabs the value from `tempstore.private` parameter. Although, a [patch](https://www.drupal.org/project/drupal/issues/2883521) was contributed to solve this.
+> Unfortunately, the expiration of the value could not be set. It grabs the value from `tempstore.expire` parameter which has a default value of 604800. Although, a [patch](https://www.drupal.org/project/drupal/issues/2883521) was contributed to solve this.
 
 Service `yaml`:
 
