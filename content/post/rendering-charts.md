@@ -1,5 +1,5 @@
 ---
-title:       "Rendering Charts in Drupal using C3.js"
+title:       "Rendering Charts in Drupal Using C3.js"
 subtitle:    ""
 description: ""
 date:        2019-11-26T16:07:55+08:00

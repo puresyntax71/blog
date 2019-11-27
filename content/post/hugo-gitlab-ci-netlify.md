@@ -1,11 +1,12 @@
 ---
-title: "Deploy Hugo on Netlify using Gitlab Pipelines"
+title: "Deploy Hugo on Netlify Uing Gitlab Pipelines"
 date: 2019-10-07T13:16:17+08:00
 keywords: []
 description: ""
 tags: ['hugo', 'gitlab', 'netlify']
 categories: ['development']
 showtoc: false
+image: "images/covers/pipelines.png"
 resources:
     - title: Deploying a Vue.js app to Netlify using GitLab’s CI/CD pipeline
       url: https://medium.com/js-dojo/deploying-vue-js-to-netlify-using-gitlab-continuous-integration-pipeline-1529a2bbf170#405c
