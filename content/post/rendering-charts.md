@@ -3,7 +3,7 @@ title:       "Rendering Charts in Drupal Using C3.js"
 subtitle:    ""
 description: ""
 date:        2019-11-26T16:07:55+08:00
-image:       "images/charts.png"
+image:       "/covers/charts.png"
 categories:  ["Development"]
 tags:        ["drupal", "c3.js", "api"]
 ---
@@ -109,7 +109,7 @@ function custom_module_node_view(&$build, EntityInterface $entity, EntityViewDis
           '#type' => 'html_tag',
           '#tag' => 'div',
           '#attributes' => [
-              'id' => 'chart-' . $entity->id(),
+            'id' => 'chart-' . $entity->id(),
             'class' => ['chart'],
           ],
         ],
