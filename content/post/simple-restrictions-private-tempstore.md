@@ -1,5 +1,5 @@
 ---
-title:       "Simple Restrictions Using Private Tempstore in Drupal"
+title:       "Simple Restrictions Using Private Tempstore in Drupal Part I"
 subtitle:    ""
 description: ""
 date:        2019-11-27T00:34:11+08:00
@@ -17,6 +17,10 @@ A task of mine involved restricting users from viewing specific sections of a co
 I've created a simple content type named "Product" which contains just a simple textfield "Password" and **has the machine name "field_password"**. I then removed the "Password" field from the display through the "Manage display" settings.
 
 The "Product" content then uses [Paragraphs](https://www.drupal.org/project/paragraphs) to display its sections.
+
+This is as simple as it gets:
+
+{{< figure src="/images/product-manage-fields.png" title="Product manage fields" >}}
 
 ## Utility Service
 
@@ -147,4 +151,4 @@ $ drupal debug:container --parameters | grep custom_module
   custom_module.product_access.field_name: field_password
 ```
 
-## Login Form
+The remaining steps are found at [Part II]({{< relref "simple-restrictions-private-tempstore-ii.md" >}}).
