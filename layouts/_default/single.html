@@ -2,8 +2,42 @@
 <!-- Post Header -->
 <style type="text/css">
     header.intro-header {
-        background-image: url('{{ if .Params.image }}{{ .Params.image | relURL }}{{ else }}{{ .Site.Params.header_image | relURL}}{{ end }}')
+        background-image: url('{{ .Site.Params.header_image | relURL }}')
     }
+
+    {{ $page := . }}
+    {{ with .Site.GetPage "section" "covers" }}
+        {{ with .Resources.GetMatch (strings.TrimPrefix "/covers/" $page.Params.image ) }}
+            {{ $original := . }}
+            {{ $extraSmall := .Resize "768x" }}
+            {{ $small := .Resize "992x" }}
+            {{ $medium := .Resize "1200x" }}
+
+            @media (max-width: 767px) {
+                header.intro-header {
+                    background-image: url('{{ $extraSmall.RelPermalink }}')
+                }
+            }
+
+            @media (min-width: 768px) {
+                header.intro-header {
+                    background-image: url('{{ $small.RelPermalink }}')
+                }
+            }
+
+            @media (min-width: 992px) {
+                header.intro-header {
+                    background-image: url('{{ $medium.RelPermalink }}')
+                }
+            }
+
+            @media (min-width: 1200px) {
+                header.intro-header {
+                    background-image: url('{{ $original.RelPermalink }}')
+                }
+            }
+        {{ end }}
+    {{ end }}
 </style>
 <header class="intro-header">
     <div class="container">
