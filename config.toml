@@ -13,7 +13,7 @@ hasCJKLanguage = false
 home = ["HTML", "RSS", "Algolia"]
 
 [params]
-  header_image = "images/home-header.png"
+  header_image = "images/home-header.jpg"
   SEOTitle = "Tech Blog and Portfolio"
   description = "Random thoughts and ramblings."
   keyword = ""
