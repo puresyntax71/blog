@@ -3,7 +3,7 @@ title:       "Simple Restrictions Using Private Tempstore in Drupal Part II"
 subtitle:    ""
 description: ""
 date:        2019-11-27T01:34:11+08:00
-image:       "/covers/private.png"
+image:       "/covers/private.jpg"
 categories:  ["Development"]
 tags:        ["drupal", "api"]
 ---

@@ -3,7 +3,7 @@ title:       "Rendering Charts in Drupal Using C3.js"
 subtitle:    ""
 description: ""
 date:        2019-11-26T16:07:55+08:00
-image:       "/covers/charts.png"
+image:       "/covers/charts.jpg"
 categories:  ["Development"]
 tags:        ["drupal", "c3.js", "api"]
 ---
