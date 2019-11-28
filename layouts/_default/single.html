@@ -1,42 +1,44 @@
 {{ define "header" }}
 <!-- Post Header -->
 <style type="text/css">
-    header.intro-header {
-        background-image: url('{{ .Site.Params.header_image | relURL }}')
-    }
+    {{ if .Params.image }}
+        {{ $page := . }}
+        {{ with .Site.GetPage "section" "covers" }}
+            {{ with .Resources.GetMatch (strings.TrimPrefix "/covers/" $page.Params.image ) }}
+                {{ $original := . }}
+                {{ $extraSmall := .Resize "768x" }}
+                {{ $small := .Resize "992x" }}
+                {{ $medium := .Resize "1200x" }}
 
-    {{ $page := . }}
-    {{ with .Site.GetPage "section" "covers" }}
-        {{ with .Resources.GetMatch (strings.TrimPrefix "/covers/" $page.Params.image ) }}
-            {{ $original := . }}
-            {{ $extraSmall := .Resize "768x" }}
-            {{ $small := .Resize "992x" }}
-            {{ $medium := .Resize "1200x" }}
-
-            @media (max-width: 767px) {
-                header.intro-header {
-                    background-image: url('{{ $extraSmall.RelPermalink }}')
+                @media (max-width: 767px) {
+                    header.intro-header {
+                        background-image: url('{{ $extraSmall.RelPermalink }}')
+                    }
                 }
-            }
 
-            @media (min-width: 768px) {
-                header.intro-header {
-                    background-image: url('{{ $small.RelPermalink }}')
+                @media (min-width: 768px) {
+                    header.intro-header {
+                        background-image: url('{{ $small.RelPermalink }}')
+                    }
                 }
-            }
 
-            @media (min-width: 992px) {
-                header.intro-header {
-                    background-image: url('{{ $medium.RelPermalink }}')
+                @media (min-width: 992px) {
+                    header.intro-header {
+                        background-image: url('{{ $medium.RelPermalink }}')
+                    }
                 }
-            }
 
-            @media (min-width: 1200px) {
-                header.intro-header {
-                    background-image: url('{{ $original.RelPermalink }}')
+                @media (min-width: 1200px) {
+                    header.intro-header {
+                        background-image: url('{{ $original.RelPermalink }}')
+                    }
                 }
-            }
+            {{ end }}
         {{ end }}
+    {{ else }}
+        header.intro-header {
+            background-image: url('{{ .Site.Params.header_image | relURL }}')
+        }
     {{ end }}
 </style>
 <header class="intro-header">
