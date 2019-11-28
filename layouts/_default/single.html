@@ -8,6 +8,7 @@
                 {{ $extraSmall := .Resize "768x" }}
                 {{ $small := .Resize "992x" }}
                 {{ $medium := .Resize "1200x" }}
+                {{ $large := .Fill "1920x516 center" }}
 
                 @media (max-width: 767px) {
                     header.intro-header {
@@ -29,7 +30,7 @@
 
                 @media (min-width: 1200px) {
                     header.intro-header {
-                        background-image: url('{{ .RelPermalink }}')
+                        background-image: url('{{ $large.RelPermalink }}')
                     }
                 }
             {{ end }}
