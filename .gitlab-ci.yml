@@ -9,7 +9,7 @@ stages:
     - deploy
 
 build:
-    image: registry.gitlab.com/pages/hugo/hugo_extended:latest
+    image: registry.gitlab.com/pages/hugo/hugo_extended:0.58.1
     stage: build
     script:
         - hugo --minify --quiet
