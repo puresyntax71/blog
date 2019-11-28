@@ -65,6 +65,7 @@ The theme has inline CSS in the template when declaring the background image URL
       {{ $extraSmall := .Resize "768x" }}
       {{ $small := .Resize "992x" }}
       {{ $medium := .Resize "1200x" }}
+      {{ $large := .Fill "1920x516 center" }}
 
       @media (max-width: 767px) {
         header.intro-header {
@@ -86,7 +87,7 @@ The theme has inline CSS in the template when declaring the background image URL
 
       @media (min-width: 1200px) {
         header.intro-header {
-          background-image: url('{{ .RelPermalink }}')
+          background-image: url('{{ $large.RelPermalink }}')
         }
       }
     {{ end }}
@@ -109,3 +110,11 @@ After:
 {{< figure src="/images/after-image-processing.png" title="After image processing" >}}
 
 Not sure if this is the correct way to benchmark this although I am very much satisfied with the loading time result of the images.
+
+## Compressing the Images
+
+The photos I've used are also from [Unsplash](https://unsplash.com/). The original images are very large and simply resizing them doesn't do much on the filesizes. I've used [Gimp](https://www.gimp.org/) to export the images as JPEG with the quality lessen. The difference in the quality is not very noticeable but the the file size is.
+
+{{< figure src="/images/after-compression.png" title="After compression" >}}
+
+So far the header images load faster than before now.
