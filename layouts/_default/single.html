@@ -5,7 +5,6 @@
         {{ $page := . }}
         {{ with .Site.GetPage "section" "covers" }}
             {{ with .Resources.GetMatch (strings.TrimPrefix "/covers/" $page.Params.image ) }}
-                {{ $original := . }}
                 {{ $extraSmall := .Resize "768x" }}
                 {{ $small := .Resize "992x" }}
                 {{ $medium := .Resize "1200x" }}
@@ -30,7 +29,7 @@
 
                 @media (min-width: 1200px) {
                     header.intro-header {
-                        background-image: url('{{ $original.RelPermalink }}')
+                        background-image: url('{{ .RelPermalink }}')
                     }
                 }
             {{ end }}

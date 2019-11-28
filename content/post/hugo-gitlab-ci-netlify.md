@@ -3,7 +3,7 @@ title: "Deploy Hugo on Netlify Using Gitlab Pipelines"
 date: 2019-10-07T13:16:17+08:00
 keywords: []
 description: ""
-tags: ['hugo', 'gitlab', 'netlify']
+tags: ['hugo', 'gitlab', 'netlify', 'blog']
 categories: ['development']
 showtoc: false
 image: "/covers/pipelines.png"
