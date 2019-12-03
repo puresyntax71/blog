@@ -1,4 +1,4 @@
-baseurl = "https://strict-panda.com"
+baseurl = "https://blog.strict-panda.com"
 title = "Strict Panda"
 theme = "hugo-theme-cleanwhite"
 languageCode = "en-us"
