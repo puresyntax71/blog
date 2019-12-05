@@ -10,7 +10,9 @@ paginate = 5 #frontpage pagination
 hasCJKLanguage = false
 
 [outputs]
-home = ["HTML", "RSS", "Algolia"]
+page = ["json"]
+section = ["json"]
+home = ["HTML", "RSS", "Algolia", "json"]
 
 [params]
   header_image = "images/home-header.jpg"
