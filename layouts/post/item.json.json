@@ -7,7 +7,7 @@
         {{ with .Site.GetPage "section" "covers" }}
             {{ with .Resources.GetMatch (strings.TrimPrefix "/covers/" $page.Params.image ) }}
                 {{ $extraSmall := .Resize "768x" }}
-                "image": "{{ $extraSmall.RelPermalink }}",
+                "image": "{{ $extraSmall.Permalink }}",
             {{ end }}
         {{ end }}
     {{ else }}
