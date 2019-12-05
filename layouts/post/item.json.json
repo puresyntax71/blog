@@ -13,5 +13,5 @@
     {{ else }}
         "image": "",
     {{ end }}
-    "summary" : {{ .Summary |  truncate 200 | jsonify }}
+    "summary" : {{ .Summary |  truncate 200 "" | jsonify }}
 }
