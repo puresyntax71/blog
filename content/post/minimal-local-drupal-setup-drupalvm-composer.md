@@ -11,6 +11,9 @@ resources:
       url: http://docs.drupalvm.com/en/latest/deployment/composer-dependency/
     - title: Using Composer to Install Drupal and Manage Dependencies
       url: https://www.drupal.org/docs/develop/using-composer/using-composer-to-install-drupal-and-manage-dependencies
+authors: [
+  "Strict Panda"
+]
 ---
 
 One of the good things I really like about Drupal is its ecosystem. With a large community, you'll find that a lot of smart people were able to contribute integrations with Drupal. Amongst these is its tooling --- from debugging to testing to local environments. Here I would show a minimal local drupal development setup.

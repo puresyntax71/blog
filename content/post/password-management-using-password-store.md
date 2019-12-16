@@ -4,6 +4,9 @@ date: 2015-12-19T00:00:00Z
 tags: ["tools", "osx", "commandline"]
 title: Password Management using Password Store
 showtoc: false
+authors: [
+  "Strict Panda"
+]
 ---
 
 [Password Store][1] is a command line utility for managing your passwords. The passwords are stored in an encrypted file which makes use of `gpg`. It also allows you to use `git` to track password changes.

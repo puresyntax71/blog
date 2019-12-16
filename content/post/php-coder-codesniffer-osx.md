@@ -4,6 +4,9 @@ date: 2015-04-07T00:00:00Z
 title: PHP, Coder, and Code Sniffer in OS X
 tags: ['php', 'tools']
 showtoc: false
+authors: [
+  "Strict Panda"
+]
 ---
 
 ### PHP

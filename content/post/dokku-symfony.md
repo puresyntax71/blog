@@ -11,6 +11,9 @@ resources:
       url: https://devcenter.heroku.com/articles/deploying-symfony4
     - title: 'Deploying to Heroku Cloud'
       url: https://symfony.com/doc/3.4/deployment/heroku.html
+authors: [
+  "Strict Panda"
+]
 ---
 
 Been recently playing around with [Dokku](http://dokku.viewdocs.io/dokku/), a heroku-like, selfhosted PaaS solution for servers. I've wanted to test out deployment of Symfony 4 on Dokku. In order to do this, I tried deploying the [`demo`](https://github.com/symfony/demo) project from Symfony.

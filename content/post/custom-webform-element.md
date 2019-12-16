@@ -14,6 +14,9 @@ resources:
       url: https://www.drupal.org/project/webform/issues/2897571#comment-12184156
     - title: Webform example element
       url: https://git.drupalcode.org/project/webform/tree/8.x-5.5/modules/webform_example_element
+authors: [
+  "Strict Panda"
+]
 ---
 
 The [Webform](https://drupal.org/project/webform) module is a popular module that has been around since the early stages of Drupal. It allows site builders to build forms from Drupal's admin dashboard. It has a lot of features from its huge list of webform elements to exporters to integration to various popular core and contributed modules.

@@ -14,6 +14,9 @@ resources:
       url: https://docs.gitlab.com/ee/ci/yaml/
     - title: Hugo Gitlab Pages
       url: https://gitlab.com/pages/hugo
+authors: [
+  "Strict Panda"
+]
 ---
 
 The current blog uses [Hugo](https://gohugo.io) as the static site generator with a forked theme of [Even](https://github.com/olOwOlo/hugo-theme-even). I've managed to use [Gitlab Pipelines](https://docs.gitlab.com/ee/ci/pipelines.html) to deploy the site to [Netlify](https://www.netlify.com).

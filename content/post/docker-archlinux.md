@@ -4,6 +4,9 @@ tags = ["archlinux","tools"]
 title = "Docker in Arch Linux"
 categories = ["development"]
 showtoc = false
+authors = [
+  "Strict Panda"
+]
 +++
 
 [Docker][1] has been a necessary tool for me when it comes to development. I've used to use [Vagrant][2] but have then switched to Docker.

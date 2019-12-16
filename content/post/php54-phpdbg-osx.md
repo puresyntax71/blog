@@ -4,6 +4,9 @@ date: 2015-04-06T00:00:00Z
 title: PHP 5.4 and PHPDBG in OS X
 tags: ['php', 'tools']
 showtoc: false
+authors: [
+  "Strict Panda"
+]
 ---
 
 I got [PHPDBG](http://phpdbg.com/) enabled in PHP 5.4 although I've never bothered giving it a try. Recently, I decided to play around with it to try to compare it with Xdebug. I tested it with a minimal Drupal installation.

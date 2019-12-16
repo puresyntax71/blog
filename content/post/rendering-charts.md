@@ -6,6 +6,9 @@ date:        2019-11-26T16:07:55+08:00
 images:      ["/images/charts.jpg"]
 categories:  ["Development"]
 tags:        ["drupal", "c3.js", "api"]
+authors: [
+  "Strict Panda"
+]
 ---
 
 One of the projects I've worked on before needed a chart that displays asset values for funds. The requirement was to allow editors to modify imported data and display it as a simple line chart in a content page using [D3.js](https://d3js.org/).

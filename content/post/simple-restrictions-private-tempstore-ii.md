@@ -6,6 +6,9 @@ date:        2019-11-27T01:34:11+08:00
 images:      ["/images/private.jpg"]
 categories:  ["Development"]
 tags:        ["drupal", "api"]
+authors: [
+  "Strict Panda"
+]
 ---
 
 This would be the continuation from [Part I]({{< relref "simple-restrictions-private-tempstore.md" >}}).
