@@ -7,6 +7,7 @@ showtoc: false
 authors: [
   "Strict Panda"
 ]
+images: ["/images/debug.jpeg"]
 ---
 
 I got [PHPDBG](http://phpdbg.com/) enabled in PHP 5.4 although I've never bothered giving it a try. Recently, I decided to play around with it to try to compare it with Xdebug. I tested it with a minimal Drupal installation.

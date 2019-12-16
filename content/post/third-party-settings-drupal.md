@@ -7,6 +7,7 @@ showtoc: false
 authors: [
   "Strict Panda"
 ]
+images: ["/images/settings.jpg"]
 ---
 
 There would be instances where modules would need to include configurations or settings to configuration entities that are defined by other modules. Usually, this would be through altering the forms and implementing some hooks when operations are done to these entities (`hook_*_presave()`, `hook_*_insert()`, etc). Drupal 8 now has `ThirdPartySettingsInterface` which allows developers to include additional configurations associated to objects which implement this interface - `ConfigEntityInterface`.

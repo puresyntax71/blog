@@ -7,6 +7,7 @@ showtoc: false
 authors: [
   "Strict Panda"
 ]
+images: ["/images/person-write.jpeg"]
 ---
 
 Finally moved back to jekyll. Nothing fancy here though. This is hosted again in Github Pages.

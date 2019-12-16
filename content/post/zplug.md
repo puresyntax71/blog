@@ -7,6 +7,7 @@ categories = ["development"]
 authors = [
   "Strict Panda"
 ]
+images = ["/images/terminal.jpeg"]
 +++
 Been a user of [`prezto`][1] for about 5 years now (ever since I started using [`zsh`][2]) and have always wondered what's it's like to either have a minimal `zsh` configuration from scratch, to use a plugin manager, or try out another framework.
 

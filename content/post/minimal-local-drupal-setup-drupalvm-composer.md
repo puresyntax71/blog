@@ -14,6 +14,7 @@ resources:
 authors: [
   "Strict Panda"
 ]
+images: ["/images/developers.jpg"]
 ---
 
 One of the good things I really like about Drupal is its ecosystem. With a large community, you'll find that a lot of smart people were able to contribute integrations with Drupal. Amongst these is its tooling --- from debugging to testing to local environments. Here I would show a minimal local drupal development setup.
