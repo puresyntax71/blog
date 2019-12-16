@@ -4,7 +4,7 @@ languageCode = "en"
 DefaultContentLanguage = "en"
 enableInlineShortcodes = true
 footnoteReturnLinkContents = "^"
-googleAnalytics = ""
+googleAnalytics = "UA-149834650-1"
 theme = "hugo-theme-chunky-poster"
 summaryLength = 20
 
