@@ -57,3 +57,5 @@ author = "authors"
   [services.twitter]
     disableInlineCSS = true
 
+[outputs]
+home = ["HTML", "RSS", "JSON"]

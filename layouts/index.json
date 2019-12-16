@@ -1,0 +1,24 @@
+{
+    "items": [
+        {{- range $i, $page := where .Site.RegularPages "Type" "in" .Site.Params.mainSections -}}
+            {{ if $i }}, {{ end }}
+            {
+                "title": "{{ .Title }}",
+                "date": "{{ .Date }}",
+                "permalink": "{{ .Permalink }}",
+                "summary": {{ .Summary |  truncate 200 "" | jsonify }}
+                {{ if .Params.images }}
+                    {{- $images := .Params.images -}}
+                    {{- with .Site.GetPage "section" "images" -}}
+                        {{- with .Resources.GetMatch (strings.TrimPrefix "/images/" (index $images 0)) -}}
+                            {{ $image := .Resize "768x" }}
+                            "image": "{{ $image.Permalink }}",
+                        {{- end -}}
+                    {{ end }}
+                {{ else }}
+                    "image": "",
+                {{ end }}
+            }
+        {{- end -}}
+    ]
+}
