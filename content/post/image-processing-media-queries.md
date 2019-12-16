@@ -3,7 +3,7 @@ title:       "Using Image Processing to Load Images in Hugo"
 subtitle:    ""
 description: ""
 date:        2019-11-28T10:51:33+08:00
-image:       "/covers/image-process.jpg"
+images:      ["/images/image-process.jpg"]
 categories:  ["Development"]
 tags:        ["hugo", "blog"]
 ---

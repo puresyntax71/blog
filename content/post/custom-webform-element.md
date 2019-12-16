@@ -6,7 +6,7 @@ description: ""
 tags: ['drupal', 'webform']
 categories: ['development']
 showtoc: false
-image: "/covers/forms.jpg"
+images: ["/images/forms.jpg"]
 resources:
     - title: Document how to add a custom WebformElement
       url: https://www.drupal.org/project/webform/issues/2877862
