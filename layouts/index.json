@@ -6,7 +6,6 @@
                 "title": "{{ .Title }}",
                 "date": "{{ .Date }}",
                 "permalink": "{{ .Permalink }}",
-                "summary": {{ .Summary |  truncate 200 "" | jsonify }}
                 {{ if .Params.images }}
                     {{- $images := .Params.images -}}
                     {{- with .Site.GetPage "section" "images" -}}
@@ -18,6 +17,7 @@
                 {{ else }}
                     "image": "",
                 {{ end }}
+                "summary": {{ .Summary |  truncate 200 "" | jsonify }}
             }
         {{- end -}}
     ]
