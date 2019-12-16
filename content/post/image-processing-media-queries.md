@@ -6,6 +6,9 @@ date:        2019-11-28T10:51:33+08:00
 images:      ["/images/image-process.jpg"]
 categories:  ["Development"]
 tags:        ["hugo", "blog"]
+authors: [
+  "Strict Panda"
+]
 ---
 
 Recently changed the theme to [Clean White](https://github.com/zhaohuabing/hugo-theme-cleanwhite). One thing I noticed is that the header image is not responsive which causes it load a bit slow when viewing on other devices.

@@ -6,6 +6,9 @@ date:        2019-11-27T00:34:11+08:00
 images:      ["/images/private.jpg"]
 categories:  ["Development"]
 tags:        ["drupal", "api"]
+authors: [
+  "Strict Panda"
+]
 ---
 
 Drupal 8 has provided some really small and helpful utilities. One of these utilities that I was able to make use of for a certain project was [`PrivateTempStore`](https://api.drupal.org/api/drupal/core%21lib%21Drupal%21Core%21TempStore%21PrivateTempStore.php/class/PrivateTempStore/8.7.x). This service allows developers to store a value specific to a current user's session. Another store would be [`SharedTempStore`](https://api.drupal.org/api/drupal/core%21lib%21Drupal%21Core%21TempStore%21SharedTempStore.php/class/SharedTempStore/8.7.x) which I think is mainly used for locking purposes.

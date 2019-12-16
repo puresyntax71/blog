@@ -1,8 +1,5 @@
 variables:
     GIT_SUBMODULE_STRATEGY: recursive
-    ALGOLIA_APP_ID: "H77FO7ZLHV"
-    ALGOLIA_INDEX_NAME: "blog"
-    ALGOLIA_INDEX_FILE: "public/algolia.json"
 
 stages:
     - build
