@@ -24,6 +24,7 @@ author = "authors"
 [params]
   description = "Random thoughts and ramblings."
   homepageImage = "/images/homepage-image.jpg"
+  author = "Strict Panda"
 
   [params.social]
     rss = true
@@ -45,6 +46,10 @@ author = "authors"
   [params.prismJS]
     enable = true
     theme = ""
+
+  [params.commento]
+    enable = true
+    url = "https://commento.strict-panda.com/js/commento.js"
 
 [markup]
   [markup.highlight]
