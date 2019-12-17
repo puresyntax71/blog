@@ -12,8 +12,14 @@ summaryLength = 20
   [[menu.main]]
     identifier = "home"
     name = "Home"
+    url = "https://strict-panda.com"
+    weight = 1
+
+  [[menu.main]]
+    identifier = "blog"
+    name = "Blog"
     url = "/"
-    weight = 10
+    weight = 2
 
 [taxonomies]
 category = "categories"
