@@ -9,6 +9,12 @@ jobs:
       - image: cibuilds/hugo:latest
     steps:
       - checkout
+      - run:
+        command: |
+          if [ -f ".gitmodules" ]; then
+            git submodule sync
+            git submodule update --init --recursive
+          fi
       - hugo/hugo-build
       - persist_to_workspace:
           root: .
