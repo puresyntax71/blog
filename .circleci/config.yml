@@ -4,6 +4,17 @@ orbs:
 version: 2.1
 
 jobs:
+  build:
+    docker:
+      - image: cibuilds/hugo:latest
+    steps:
+      - checkout
+      - hugo/hugo-build
+      - persist_to_workspace:
+          root: .
+          paths:
+            - public
+            - netlify.toml
   deploy:
     executor:
       name: node/default
