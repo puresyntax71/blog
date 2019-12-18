@@ -15,7 +15,8 @@ jobs:
             git submodule sync
             git submodule update --init --recursive
           fi
-      - hugo/hugo-build
+      - hugo/hugo-build:
+          extra-flags: '--minify --quiet'
       - persist_to_workspace:
           root: .
           paths:
@@ -35,11 +36,10 @@ jobs:
 workflows:
   main:
     jobs:
-      - hugo/build:
-          html-proofer: false
+      - build
       - deploy:
           filters:
             branches:
               only: master
           requires:
-            - hugo/build
+            - build
