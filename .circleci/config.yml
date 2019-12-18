@@ -10,11 +10,12 @@ jobs:
     steps:
       - checkout
       - run:
-        command: |
-          if [ -f ".gitmodules" ]; then
-            git submodule sync
-            git submodule update --init --recursive
-          fi
+          command: |
+            if [ -f ".gitmodules" ]; then
+              git submodule sync
+              git submodule update --init --recursive
+            fi
+          name: Checkout Submodules if Needed
       - hugo/hugo-build:
           extra-flags: '--minify --quiet'
       - persist_to_workspace:
