@@ -31,6 +31,7 @@ author = "authors"
   description = "Random thoughts and ramblings."
   homepageImage = "/images/homepage-image.jpg"
   author = "Strict Panda"
+  share = true
 
   [params.social]
     rss = true
