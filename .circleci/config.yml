@@ -24,7 +24,7 @@ jobs:
       - attach_workspace:
           at: ~/images
       - checkout
-      - run: cp -r ~/images/* content/images
+      - run: cp -r ~/images/images/* content/images
       - run:
           command: |
             if [ -f ".gitmodules" ]; then
