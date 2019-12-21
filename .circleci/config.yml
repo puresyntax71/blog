@@ -1,14 +1,30 @@
 orbs:
   hugo: circleci/hugo@0
   node: circleci/node@1.1
+  aws-s3: circleci/aws-s3@1
 version: 2.1
 
 jobs:
+  images:
+    docker:
+      - image: circleci/python:2.7
+    steps:
+      - aws-s3/copy:
+          from: 's3://strict-panda-blog'
+          to: images
+          arguments: --recursive
+      - persist_to_workspace:
+          root: .
+          paths:
+            - images
   build:
     docker:
       - image: cibuilds/hugo:latest
     steps:
+      - attach_workspace:
+          at: ~/images
       - checkout
+      - run: cp -r ~/images/* content/images
       - run:
           command: |
             if [ -f ".gitmodules" ]; then
@@ -37,7 +53,10 @@ jobs:
 workflows:
   main:
     jobs:
-      - build
+      - images
+      - build:
+          requires:
+            - images
       - deploy:
           filters:
             branches:
