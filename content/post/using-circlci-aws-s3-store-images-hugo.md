@@ -3,7 +3,7 @@ title: "Using Circle CI and AWS S3 to Store Images in Hugo"
 date: 2020-01-02T13:33:42+08:00
 images: ["/images/photo-album.jpg"]
 categories: []
-tags: []
+tags: ["hugo", "blog"]
 authors: ["Strict Panda"]
 ---
 
