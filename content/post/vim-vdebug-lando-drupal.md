@@ -21,20 +21,12 @@ For the configuration, simply setting `xdebug` to `true` so that Lando would [en
 name: drupal
 recipe: drupal8
 
-compose:
-  - docker-compose.yml
-
 services:
   appserver:
     webroot: web
     xdebug: true
     config:
       php: config/php.ini
-    overrides:
-      environment:
-        MINK_DRIVER_ARGS_WEBDRIVER: '["chrome", null, "http://chromedriver:4444/wd/hub"]'
-        SIMPLETEST_DB: 'mysql://drupal8:drupal8@database/drupal8'
-        SIMPLETEST_BASE_URL: 'http://drupal.lndo.site/'
 ```
 
 For `config/php.ini`, I simply followed the one from [setting up vscode](https://docs.lando.dev/guides/lando-with-vscode.html#getting-started):
