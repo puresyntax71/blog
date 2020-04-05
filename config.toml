@@ -33,6 +33,9 @@ author = "authors"
   author = "Strict Panda"
   share = true
 
+  customCSS = ['custom.css']
+  customJS = []
+
   [params.social]
     rss = true
     email = "me@strict-panda.com"
@@ -61,6 +64,9 @@ author = "authors"
 [markup]
   [markup.highlight]
     codeFences = false
+
+  [markup.goldmark.renderer]
+    unsafe= true
 
 [services]
   [services.instagram]

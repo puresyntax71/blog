@@ -11,7 +11,7 @@ With the introduction of OOP on Drupal 8, it has become a bit difficult for me t
 
 ## Tools
 
-So what are the tools that I am using? I've been a long time user of [vim](https://www.vim.org/) and recently just switched to [Neovim](https://neovim.io/). For development environment, I mostly jump between different methods for building Drupal but recently been using [Lando](https://lando.dev/).
+So what are the tools that I am using? I've been a long time user of [vim](https://www.vim.org/) and recently just switched to [Neovim](https://neovim.io/). For development environment, I mostly jump between different methods for building Drupal but recently have been using [Lando](https://lando.dev/).
 
 ### Lando
 
@@ -81,7 +81,7 @@ For other options, they can be found on `:h Vdebug`.
 
 ## Debugging
 
-Consider the scenario where you are viewing a node and wanted to debug the method `\Drupal\node\Entity\Node::getType()`. To start debugging, open the file `core/modules/node/src/Entity/Node.php` and set a breakpoint using <kbd>F10</kbd>, start the debugger using <kbd>F5</kbd>, and finally visit the a single node.
+Consider the scenario where you are viewing a node and wanted to debug the method `\Drupal\node\Entity\Node::getType()`. To start debugging, open the file `core/modules/node/src/Entity/Node.php` and set a breakpoint using <kbd>F10</kbd>, start the debugger using <kbd>F5</kbd>, and finally visit a single node.
 
 I'm not entirely sure of the actual definitions for step debugging although in my own words, I can probably explain them like these:
 
@@ -115,4 +115,4 @@ let g:vdebug_keymap = {
 
 The explanation for each window can be found at `:h VdebugUI`. I find the "Watch" window very helpful since I can inspect the different variables with their context. Pressing <kbd>Enter</kbd> on a variable would expand/collapse their trees.
 
-So far, I think these are the basic things to debugging with (Neo)vim using Vdebug. Vdebug has a lot of other features such as evaluating although I haven't gone much further with the other features yet.
+So far, I think these are the basic things to debugging with (Neo)vim using Vdebug. Vdebug has a lot of other features such as evaluating although I haven't gone much further yet.
