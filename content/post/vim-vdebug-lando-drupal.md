@@ -73,7 +73,7 @@ endif
 let g:vdebug_features.max_children = 128
 ```
 
-> `vdebug_options.path_maps` sets the paths so that it works with Lando.
+> `vdebug_options.path_maps` sets the paths so that it works with Lando. Due to the `getcwd()` value, you'll need to make sure that before starting (Neo)vim, you're current working directory would be your workspace i.e. whatever is mounted on '/app' inside Lando.
 
 > `vdebug_features.max_children` allows inspecting variables from Drupal most of the time.
 
